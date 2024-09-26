@@ -24,10 +24,6 @@
 </body>
 </main>
 
-
-
-
-
 <style>
 .mouse{
     height: 300px;
@@ -71,7 +67,6 @@ h1{
 }
 p{
     font-size: var(--story-p);
-    /* max-width: 30ch; */
 }
 a:nth-of-type(1){
     margin-left: auto;

@@ -16,17 +16,13 @@
         <h1>Test the progress</h1>
             <p>
                 During the learning journal you can measure the improvement of your child.  
-There is an option to share the data with researchers to further improve the method and participate in special researches! You can manage the option to share your data at any given time in the app.
+                There is an option to share the data with researchers to further improve the method and participate in special researches! You can manage the option to share your data at any given time in the app.
             </p>
     <a href="continue">Continue</a>
 </section>
 
 </body>
 </main>
-
-
-
-
 
 <style>
 .mouse{
@@ -71,7 +67,6 @@ h1{
 }
 p{
     font-size: var(--story-p);
-    /* max-width: 30ch; */
 }
 a:nth-of-type(1){
     margin-left: auto;

@@ -11,7 +11,6 @@
         <h1>Sign up</h1> 
     </div>
    
-
     <form>
         <label for="fname">Name</label><br>
         <input type="text" id="fname" name="fname" placeholder="Your name"><br>
@@ -20,8 +19,6 @@
         <label for="password">Password</label><br>
         <input type="text" id="password" name="password" placeholder="Password (atleast 8 characters)">
       </form>
-
-
 
     <article>
         <div>
@@ -41,7 +38,6 @@
 
             <p>Agree to share data with research universities and participate in research <a href="/" class="click-here">(click here for more information)</a> </p>
         </div>
-
     </article>
 
     <a href="/" class="sign-upbtn">Sign up!</a>
@@ -97,7 +93,7 @@ div{
     flex-direction: row;
 }
 
-/* The switch - the box around the slider */
+/* Styling voor de toggle button */
 .switch {
   position: relative;
   display: inline-block;
@@ -105,15 +101,11 @@ div{
   height: 20px;
   margin-right: 10px;
 }
-
-/* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
-
-/* The slider */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -125,7 +117,6 @@ div{
   -webkit-transition: .4s;
   transition: .4s;
 }
-
 .slider:before {
   position: absolute;
   content: "";
@@ -137,26 +128,20 @@ div{
   -webkit-transition: .4s;
   transition: .4s;
 }
-
 input:checked + .slider {
   background-color: #2196F3;
 }
-
 input:focus + .slider {
   box-shadow: 0 0 1px #2196F3;
 }
-
 input:checked + .slider:before {
   -webkit-transform: translateX(20px);
   -ms-transform: translateX(20px);
   transform: translateX(20px);
 }
-
-/* Rounded sliders */
 .slider.round {
   border-radius: 17px;
 }
-
 .slider.round:before {
   border-radius: 50%;
 }
