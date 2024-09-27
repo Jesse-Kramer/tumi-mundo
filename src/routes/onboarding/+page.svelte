@@ -1,16 +1,11 @@
-<script>
-    export let csr = false;
-</script>
-
-
 <main>
 <body>
 
 <section>
     <a href="skip">Skip</a>
     <div class="mouse">
-        <img src="/characters/Ellipse131.svg">
-        <img src="/characters/mouse.svg">
+        <img src="/characters/Ellipse131.svg" alt="rat image">
+        <img src="/characters/mouse.svg" alt="rat image">
     </div>
    
         <h1>Learn languages</h1>
@@ -18,7 +13,7 @@
                 Every household is different. Some only speak one language, other even as much as three!
                 Learning more than one language has great neurological benefits for anyone at any age. With TuMi Mundo your child can learn up to 3 languages.
             </p>
-    <a href="/onboarding2">Continue</a>
+    <a href="/onboarding/2">Continue</a>
 </section>
 
 </body>

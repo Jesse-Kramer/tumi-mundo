@@ -1,7 +1,3 @@
-<script>
-    export let csr = false;
-</script>
-
 <main>
 <body>
 
@@ -12,35 +8,37 @@
     </div>
    
     <form>
-        <label for="fname">Name</label><br>
-        <input type="text" id="fname" name="fname" placeholder="Your name"><br>
-        <label for="lname">Email</label><br>
+        <label for="fname">Name</label>
+        <input type="text" id="fname" name="fname" placeholder="Your name">
+        <label for="lname">Email</label>
         <input type="text" id="lname" name="lname" placeholder="Your email">
-        <label for="password">Password</label><br>
+        <label for="password">Password</label>
         <input type="text" id="password" name="password" placeholder="Password (atleast 8 characters)">
-      </form>
 
-    <article>
-        <div>
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-            </label>
+        <article>
+            <div>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
 
-            <p>Agree to the terms of services and the privacy policy <a href="/" class="click-here">(click here for more information)</a></p>
-        </div>
-   
-        <div>
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-            </label>
+                <p>Agree to the terms of services and the privacy policy <a href="/" class="click-here">(click here for more information)</a></p>
+            </div>
+    
+            <div>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
 
-            <p>Agree to share data with research universities and participate in research <a href="/" class="click-here">(click here for more information)</a> </p>
-        </div>
-    </article>
+                <p>Agree to share data with research universities and participate in research <a href="/" class="click-here">(click here for more information)</a> </p>
+            </div>
+        </article>
 
-    <a href="/" class="sign-upbtn">Sign up!</a>
+        <!-- dit moet eigenlijk een input type submit button zijn om de gegevens te posten-->
+        <input type="submit" value="Sign up!" class="sign-upbtn">
+    </form>
+
 </section>
 
 
@@ -52,10 +50,13 @@
     padding: 0;
     margin: 0;
 }
-section{
-    padding: 10px;
+section, form{
     display: flex;
     flex-direction: column;
+    
+}
+section{
+    padding: 10px;
     height: 100vh;
 }
 .heading{
@@ -149,9 +150,9 @@ input:checked + .slider:before {
     margin: auto;
     margin-bottom: 0;
     border-radius: 5px;
-    width: 90%;
+    width: 95%;
     background-color: #3D7A95;
-    padding: 5px;
+    padding: 10px;
     text-align: center;
     font-size: 10px;
     color: white;

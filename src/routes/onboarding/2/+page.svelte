@@ -1,16 +1,11 @@
-<script>
-    export let csr = false;
-</script>
-
-
 <main>
 <body>
 
 <section>
     <a href="skip">Skip</a>
     <div class="mouse">
-        <img src="/characters/Ellipse131-2.svg">
-        <img src="/characters/mouse.svg">
+        <img src="/characters/Ellipse131-2.svg" alt="rat image">
+        <img src="/characters/mouse.svg" alt="rat image">
     </div>
    
         <h1>Test the progress</h1>
@@ -25,6 +20,7 @@
 </main>
 
 <style>
+
 .mouse{
     height: 300px;
 }
