@@ -1,3 +1,4 @@
+<title>sign-up</title>
 <section>
     <div class="heading">
         <a>back</a>
@@ -6,16 +7,16 @@
    
     <form>
         <label for="fname">Name</label>
-        <input type="text" id="fname" name="fname" placeholder="Your name">
+            <input type="text" id="fname" name="fname" placeholder="Your name" aria-label="name">
         <label for="lname">Email</label>
-        <input type="text" id="lname" name="lname" placeholder="Your email">
+            <input type="text" id="lname" name="lname" placeholder="Your email" aria-label="email">
         <label for="password">Password</label>
-        <input type="text" id="password" name="password" placeholder="Password (atleast 8 characters)">
+            <input type="text" id="password" name="password" placeholder="Password (atleast 8 characters)" aria-label="password">
 
         <article>
             <div>
                 <label class="switch">
-                    <input type="checkbox">
+                    <input type="checkbox" aria-label="toggle-button">
                     <span class="slider round"></span>
                 </label>
 
@@ -24,21 +25,17 @@
     
             <div>
                 <label class="switch">
-                    <input type="checkbox">
+                    <input type="checkbox" aria-label="toggle-button">
                     <span class="slider round"></span>
                 </label>
 
-                <p>Agree to share data with research universities and participate in research <a href="/" class="click-here">(click here for more information)</a> </p>
+                <p>Agree to share data with research universities and participate in research <a href="/" class="click-here">(click here for more information)</a></p>
             </div>
         </article>
 
-        <!-- dit moet eigenlijk een input type submit button zijn om de gegevens te posten-->
         <input type="submit" value="Sign up!" class="sign-upbtn">
     </form>
-
 </section>
-
-
 
 
 <style>
@@ -54,7 +51,6 @@ section {
     padding: 10px;
     min-height: 100vh;
 }
-
 form {
     flex-grow: 1;
 }
@@ -159,9 +155,7 @@ input:checked + .slider:before {
     margin-bottom: 30px;
 }
 .click-here{
-    color: #5899E5;
+    color: #599AE7;
 }
-
-
 
 </style>

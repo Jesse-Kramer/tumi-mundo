@@ -1,11 +1,11 @@
-<title>onboarding-1</title>
+<title>onboarding-3</title>
 <section>
     <a href="skip">Skip</a>
     <div class="mouse">
         <picture class="eclipse">
-            <source srcset="/characters/Ellipse131.svg?format=avif" type="image/avif">
-            <source srcset="/characters/Ellipse131.svg?format=webp">
-            <img src="h/characters/Ellipse131.svg" alt="eclipse" loading="lazy" width="250px">
+            <source srcset="/characters/Ellipse131-3.svg?format=avif" type="image/avif">
+            <source srcset="/characters/Ellipse131-3.svg?format=webp">
+            <img src="h/characters/Ellipse131-3.svg" alt="eclipse" loading="lazy" width="250px">
         </picture>
         <picture class="rat">
             <source srcset="/characters/mouse.svg?format=avif" type="image/avif">
@@ -14,23 +14,24 @@
         </picture>
     </div>
    
-    <h1>Learn languages</h1>
-    <p>
-        Every household is different. Some only speak one language, others even as much as three!
-        Learning more than one language has great neurological benefits for anyone at any age. With TuMi Mundo your child can learn up to 3 languages.
-    </p>
-    <a href="/onboarding-2">Continue</a>
+    <h1>See the results</h1>
+        <p>
+            See the results of the tests and watch as your child learns a language with TuMi Mundo.
+            The older your child becomes the further into the method you go, it starts with listening, it ends with being able to have a full conversation.
+        </p>
+    <a href="/sign-up-1">Make an account</a>
 </section>
 
 <style>
-* {
+*{
     color: white;
     font-family: sans-serif;
     text-decoration: none;
-    --main-blue: #599AE7;
-    --secondary-blue: #4A82C3;
+
+    --main-blue: #069E8F;
+    --secondary-blue: #04786C;
 }
-html, main, body {
+html,main,body{
     margin: 0;
     padding: 0;
 }
