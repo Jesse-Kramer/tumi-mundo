@@ -13,7 +13,7 @@
                 Every household is different. Some only speak one language, other even as much as three!
                 Learning more than one language has great neurological benefits for anyone at any age. With TuMi Mundo your child can learn up to 3 languages.
             </p>
-    <a href="/onboarding/2">Continue</a>
+    <a href="/onboarding-2">Continue</a>
 </section>
 
 </body>
