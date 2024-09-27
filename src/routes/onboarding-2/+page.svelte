@@ -1,5 +1,3 @@
-<main>
-<body>
 
 <section>
     <a href="skip">Skip</a>
@@ -16,18 +14,20 @@
     <a href="continue">Continue</a>
 </section>
 
-</body>
-</main>
 
 <style>
 
 .mouse{
     height: 300px;
+    width: auto;
+    position: relative;
 }
+
 img{
     height: auto;
-    width: 200px ;
+    width: auto ;
     position: absolute;
+    margin-top: 20px;
 }
 *{
     color: white;
@@ -42,18 +42,11 @@ img{
     --SemiBold-h2: 20px;
     --Regular-h3: 12px;
 }
-body{
-    background-color: #3F92B6;
-    height: 100%;
-}
 section{
     display: flex;
     flex-direction: column;
     height: 100vh;
-}
-img{
-    height: 300px;
-    margin-top: 20px;
+    background-color: #3F92B6;
 }
 h1, p{
     text-align: center;

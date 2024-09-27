@@ -1,6 +1,3 @@
-<main>
-<body>
-
 <section>
     <div class="heading">
         <a>back</a>
@@ -42,8 +39,7 @@
 </section>
 
 
-</body>
-</main>
+
 
 <style>
 *{
@@ -53,38 +49,40 @@
 section, form{
     display: flex;
     flex-direction: column;
-    
 }
-section{
+section {
     padding: 10px;
-    height: 100vh;
+    min-height: 100vh;
+}
+
+form {
+    flex-grow: 1;
 }
 .heading{
     display: flex;
     align-items: center;
     justify-content: left;
     width: 100%;
-    margin-bottom: 20px;
+    margin: 40px 0 40px 0;
 }
 .heading > h1{
     margin: auto;
 }
 label{
-    font-size: 13px;
+    font-size: 20px;
 }
 p{
-    font-size: 8px;
+    font-size: 16px;
     max-width: 40ch;
 }
 
 input{
-    width: 90%;
-    padding: 10px;
-    background-color: lightgrey;
+    padding: 20px;
+    background-color: #EEEEEE;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-bottom: 20px ;
-    font-size: 10px;
+    font-size: 16px;
 }
 label{
     margin-bottom: 10px;
@@ -92,6 +90,7 @@ label{
 div{
     display: flex;
     flex-direction: row;
+    margin-bottom: 20px;
 }
 
 /* Styling voor de toggle button */
@@ -147,18 +146,22 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 .sign-upbtn{
-    margin: auto;
-    margin-bottom: 0;
+    bottom: 0;
     border-radius: 5px;
-    width: 95%;
+    width: 100%;
     background-color: #3D7A95;
     padding: 10px;
     text-align: center;
-    font-size: 10px;
+    font-size: 16px;
     color: white;
-    text-decoration: none;   
+    text-decoration: none; 
+    margin-top: auto;  
+    margin-bottom: 30px;
 }
 .click-here{
-    color: #3D7A95;
+    color: #5899E5;
 }
+
+
+
 </style>

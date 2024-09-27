@@ -1,5 +1,4 @@
-<main>
-<body>
+
 
 <section>
     <a href="skip">Skip</a>
@@ -16,10 +15,9 @@
     <a href="/onboarding-2">Continue</a>
 </section>
 
-</body>
-</main>
 
 <style>
+
 .mouse{
     height: 300px;
 }
@@ -40,15 +38,16 @@ img{
     --SemiBold-h1: 28px;
     --SemiBold-h2: 20px;
     --Regular-h3: 12px;
+    margin: 0;
 }
-body{
-    background-color: var(--main-blue);
-    height: 100%;
+html,main,body{
+    margin: 0;
 }
 section{
     display: flex;
     flex-direction: column;
     height: 100vh;
+    background-color: var(--main-blue);
 }
 img{
     height: 300px;
@@ -58,15 +57,20 @@ h1, p{
     text-align: center;
 }
 h1{
-    font-size: var(--Regular-h3);
+    font-size: 20px;
 }
 p{
-    font-size: var(--story-p);
+    font-size: 16px;
+    max-width: 35ch;
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 a:nth-of-type(1){
     margin-left: auto;
     color: white;
-    font-size: var(--Regular-h3);
+    /* font-size: var(--Regular-h3); */
+    font-size: 20px;
 }
 a:nth-of-type(2){
     margin: auto;
@@ -76,7 +80,7 @@ a:nth-of-type(2){
     background-color: var(--secondary-blue);
     padding: 10px;
     text-align: center;
-    font-size: var(--Regular-h3);
+    font-size: 16px;
     
 }
 
