@@ -1,16 +1,16 @@
 <title>onboarding-1</title>
 <section>
-    <a href="skip">Skip</a>
+    <a href="/sign-up-1">Skip</a>
     <div class="mouse">
         <picture class="eclipse">
             <source srcset="/characters/Ellipse131.svg?format=avif" type="image/avif">
             <source srcset="/characters/Ellipse131.svg?format=webp">
-            <img src="h/characters/Ellipse131.svg" alt="eclipse" loading="lazy" width="250px">
+            <img src="h/characters/Ellipse131.svg" alt="eclipse" loading="lazy" width="250">
         </picture>
         <picture class="rat">
             <source srcset="/characters/mouse.svg?format=avif" type="image/avif">
             <source srcset="/characters/mouse.svg?format=webp">
-            <img src="/characters/mouse.svg" alt="rat image" height="250px">
+            <img src="/characters/mouse.svg" alt="rat image" height="250">
         </picture>
     </div>
    
