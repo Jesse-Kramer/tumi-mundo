@@ -1,16 +1,13 @@
-
 <!-- <script>
   import Story from '../../components/story.svelte'
 </script> -->
 
 <script>
-
-  // Maak een variabele voor de slide met daarin een array aan voor de verschillende slides 
-  let slides = ['Slide 1', 'Slide 2', 'Slide 3'];
-  let currentSlide = 0; 
+  // Maak een variabele voor de slide met daarin een array aan voor de verschillende slides
+  let slides = ["Slide 1", "Slide 2", "Slide 3"];
+  let currentSlide = 0;
   // Toon de eerste slide al (omdat 0 = 1)
 
-  
   function goToSlide(slideIndex) {
     if (slideIndex >= slides.length) {
       currentSlide = 0; // Terug naar de eerste slide
@@ -29,7 +26,6 @@
   function prevSlide() {
     goToSlide(currentSlide - 1);
   }
-
 </script>
 
 <a href="/">Go to Home</a>
@@ -95,25 +91,21 @@
       </div>
     </section>
 
-    <form class="carousel-container">
-      <!-- Radio buttons voor het besturen van de slides -->
-      <input type="radio" name="carousel" id="slide1" checked={currentSlide === 0} />
-      <input type="radio" name="carousel" id="slide2" checked={currentSlide === 1} />
-      <input type="radio" name="carousel" id="slide3" checked={currentSlide === 2}/>
-
-      <article class="carousel">
-        <article class="carousel-slide">
-          <!-- <Story/> -->
-          <article class="story-content">
-            <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
-
-            <div class="tekst">
-              <p class="title">The dinosaur family</p>
-              <p class="description">
-                Long ago there was a family of dinosaurs that lived in a
-                deserted place. The little dinosaur is making a new friend.
-              </p>
-            </div>
+    <!-- <ul> -->
+      <!-- Eerste slide met drie items -->
+      <li class="slide">
+        <ul>
+          <li>
+            <figure>
+              <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
+              <figcaption>
+                <h3>The dinosaur family</h3>
+                <p class="beschrijving">
+                  Long ago there was a family of dinosaurs that lived in a
+                  deserted place. The little dinosaur is making a new friend.
+                </p>
+              </figcaption>
+            </figure>
 
             <img
               src="/Rectangle 135.svg"
@@ -138,314 +130,447 @@
                 <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
               </div>
             </div>
+          </li>
+
+          <li>
+            <figure>
+              <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
+              <figcaption>
+                <h3>Six o’clock</h3>
+                <p class="beschrijving">
+                  A group of friends try to take over the playground. Jesper and
+                  Wylan want to take over the swings, but one person stands in
+                  their way.
+                </p>
+              </figcaption>
+            </figure>
+
+            <img
+              src="/Rectangle 135.svg"
+              class="vlag-icon"
+              alt="engelse-vlag"
+            />
+
+            <div class="iconen-onder">
+              <img
+                src="/Group 316 (1).svg"
+                class="links-onder"
+                alt="playbutton-blue"
+              />
+              <p class="time">3 min. 5 sec</p>
+
+              <div class="rechts-onder">
+                <img
+                  src="/Frame 64.svg"
+                  class="download-icon"
+                  alt="download-icon"
+                />
+                <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <figure>
+              <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
+              <figcaption>
+                <h3>The dinosaur family</h3>
+                <p class="beschrijving">
+                  Long ago there was a family of dinosaurs that lived in a
+                  deserted place. The little dinosaur is making a new friend.
+                </p>
+              </figcaption>
+            </figure>
+
+            <img
+              src="/Rectangle 135.svg"
+              class="vlag-icon"
+              alt="engelse-vlag"
+            />
+
+            <div class="iconen-onder">
+              <img
+                src="/Group 316 (1).svg"
+                class="links-onder"
+                alt="playbutton-blue"
+              />
+              <p class="time">3 min. 5 sec</p>
+
+              <div class="rechts-onder">
+                <img
+                  src="/Frame 64.svg"
+                  class="download-icon"
+                  alt="download-icon"
+                />
+                <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
+              </div>
+            </div>
+          </li>
+        </ul>
+      </li>
+
+      <div class="carousel-container">
+   
+        <input
+          type="radio"
+          name="carousel"
+          id="slide1"
+          checked={currentSlide === 0}
+        />
+        <input
+          type="radio"
+          name="carousel"
+          id="slide2"
+          checked={currentSlide === 1}
+        />
+        <input
+          type="radio"
+          name="carousel"
+          id="slide3"
+          checked={currentSlide === 2}
+        />
+
+        <article class="carousel">
+          <article class="carousel-slide">
+            <!-- <Story/> -->
+
+            <article class="story-content">
+              <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
+
+              <div class="tekst">
+                <p class="title">The dinosaur family</p>
+                <p class="description">
+                  Long ago there was a family of dinosaurs that lived in a
+                  deserted place. The little dinosaur is making a new friend.
+                </p>
+              </div>
+
+              <img
+                src="/Rectangle 135.svg"
+                class="vlag-icon"
+                alt="engelse-vlag"
+              />
+
+              <div class="iconen-onder">
+                <img
+                  src="/Group 316 (1).svg"
+                  class="links-onder"
+                  alt="playbutton-blue"
+                />
+                <p class="time">3 min. 5 sec</p>
+
+                <div class="rechts-onder">
+                  <img
+                    src="/Frame 64.svg"
+                    class="download-icon"
+                    alt="download-icon"
+                  />
+
+                  <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
+                </div>
+              </div>
+            </article>
+
+            <article class="story-content">
+              <img src="/Frame 104.svg" class="schildpad" alt="pinguin" />
+
+              <div class="tekst">
+                <p class="title">Six o’clock</p>
+                <p class="description">
+                  A group of friends try to take over the playground. Jesper and
+                  Wylan want to take over the swings, but one person stands in
+                  their way.
+                </p>
+              </div>
+
+              <img
+                src="/Rectangle 135.svg"
+                class="vlag-icon"
+                alt="engelse-vlag"
+              />
+
+              <div class="iconen-onder">
+                <img
+                  src="/Group 316 (1).svg"
+                  class="links-onder"
+                  alt="playbutton-blue"
+                />
+                <p class="time">3 min. 5 sec</p>
+
+                <div class="rechts-onder">
+                  <img
+                    src="/Frame 64.svg"
+                    class="download-icon"
+                    alt="download-icon"
+                  />
+                  <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
+                </div>
+              </div>
+            </article>
+
+            <article class="story-content">
+              <img src="/Frame 105.svg" class="schildpad" alt="bomen" />
+
+              <div class="tekst">
+                <p class="title">Toys on the Orient Express</p>
+                <p class="description">
+                  A child looses his toy during a train ride. He is determined
+                  to find it back.
+                </p>
+              </div>
+
+              <img
+                src="/Rectangle 135.svg"
+                class="vlag-icon"
+                alt="engelse-vlag"
+              />
+
+              <div class="iconen-onder">
+                <img
+                  src="/Group 316 (1).svg"
+                  class="links-onder"
+                  alt="playbutton-blue"
+                />
+                <p class="time">3 min. 5 sec</p>
+
+                <div class="rechts-onder">
+                  <img
+                    src="/Frame 64.svg"
+                    class="download-icon"
+                    alt="download-icon"
+                  />
+                  <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
+                </div>
+              </div>
+            </article>
           </article>
 
-          <article class="story-content">
-            <img src="/Frame 104.svg" class="schildpad" alt="pinguin" />
+          <!-- Slide 2 -->
+          <article class="carousel-slide">
+            <article class="story-content">
+              <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
 
-            <div class="tekst">
-              <p class="title">Six o’clock</p>
-              <p class="description">
-                A group of friends try to take over the playground. Jesper and
-                Wylan want to take over the swings, but one person stands in
-                their way.
-              </p>
-            </div>
-
-            <img
-              src="/Rectangle 135.svg"
-              class="vlag-icon"
-              alt="engelse-vlag"
-            />
-
-            <div class="iconen-onder">
-              <img
-                src="/Group 316 (1).svg"
-                class="links-onder"
-                alt="playbutton-blue"
-              />
-              <p class="time">3 min. 5 sec</p>
-
-              <div class="rechts-onder">
-                <img
-                  src="/Frame 64.svg"
-                  class="download-icon"
-                  alt="download-icon"
-                />
-                <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
+              <div class="tekst">
+                <p class="title">The dinosaur family</p>
+                <p class="description">
+                  Long ago there was a family of dinosaurs that lived in a
+                  deserted place. The little dinosaur is making a new friend.
+                </p>
               </div>
-            </div>
+
+              <img
+                src="/Rectangle 135.svg"
+                class="vlag-icon"
+                alt="engelse-vlag"
+              />
+
+              <div class="iconen-onder">
+                <img
+                  src="/Group 316 (1).svg"
+                  class="links-onder"
+                  alt="playbutton-blue"
+                />
+                <p class="time">3 min. 5 sec</p>
+
+                <div class="rechts-onder">
+                  <img
+                    src="/Frame 64.svg"
+                    class="download-icon"
+                    alt="download-icon"
+                  />
+                  <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
+                </div>
+              </div>
+            </article>
+            <article class="story-content">
+              <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
+
+              <div class="tekst">
+                <p class="title">The dinosaur family</p>
+                <p class="description">
+                  Long ago there was a family of dinosaurs that lived in a
+                  deserted place. The little dinosaur is making a new friend.
+                </p>
+              </div>
+
+              <img
+                src="/Rectangle 135.svg"
+                class="vlag-icon"
+                alt="engelse-vlag"
+              />
+
+              <div class="iconen-onder">
+                <img
+                  src="/Group 316 (1).svg"
+                  class="links-onder"
+                  alt="playbutton-blue"
+                />
+                <p class="time">3 min. 5 sec</p>
+
+                <div class="rechts-onder">
+                  <img
+                    src="/Frame 64.svg"
+                    class="download-icon"
+                    alt="download-icon"
+                  />
+                  <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
+                </div>
+              </div>
+            </article>
+            <article class="story-content">
+              <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
+
+              <div class="tekst">
+                <p class="title">The dinosaur family</p>
+                <p class="description">
+                  Long ago there was a family of dinosaurs that lived in a
+                  deserted place. The little dinosaur is making a new friend.
+                </p>
+              </div>
+
+              <img
+                src="/Rectangle 135.svg"
+                class="vlag-icon"
+                alt="engelse-vlag"
+              />
+
+              <div class="iconen-onder">
+                <img
+                  src="/Group 316 (1).svg"
+                  class="links-onder"
+                  alt="playbutton-blue"
+                />
+                <p class="time">3 min. 5 sec</p>
+
+                <div class="rechts-onder">
+                  <img
+                    src="/Frame 64.svg"
+                    class="download-icon"
+                    alt="download-icon"
+                  />
+                  <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
+                </div>
+              </div>
+            </article>
           </article>
 
-          <article class="story-content">
-            <img src="/Frame 105.svg" class="schildpad" alt="bomen" />
+          <!-- -- Slide 3 -->
+          <article class="carousel-slide">
+            <article class="story-content">
+              <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
 
-            <div class="tekst">
-              <p class="title">Toys on the Orient Express</p>
-              <p class="description">
-                A child looses his toy during a train ride. He is determined to
-                find it back.
-              </p>
-            </div>
-
-            <img
-              src="/Rectangle 135.svg"
-              class="vlag-icon"
-              alt="engelse-vlag"
-            />
-
-            <div class="iconen-onder">
-              <img
-                src="/Group 316 (1).svg"
-                class="links-onder"
-                alt="playbutton-blue"
-              />
-              <p class="time">3 min. 5 sec</p>
-
-              <div class="rechts-onder">
-                <img
-                  src="/Frame 64.svg"
-                  class="download-icon"
-                  alt="download-icon"
-                />
-                <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
+              <div class="tekst">
+                <p class="title">The dinosaur family</p>
+                <p class="description">
+                  Long ago there was a family of dinosaurs that lived in a
+                  deserted place. The little dinosaur is making a new friend.
+                </p>
               </div>
-            </div>
+
+              <img
+                src="/Rectangle 135.svg"
+                class="vlag-icon"
+                alt="engelse-vlag"
+              />
+
+              <div class="iconen-onder">
+                <img
+                  src="/Group 316 (1).svg"
+                  class="links-onder"
+                  alt="playbutton-blue"
+                />
+                <p class="time">3 min. 5 sec</p>
+
+                <div class="rechts-onder">
+                  <img
+                    src="/Frame 64.svg"
+                    class="download-icon"
+                    alt="download-icon"
+                  />
+                  <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
+                </div>
+              </div>
+            </article>
+            <article class="story-content">
+              <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
+
+              <div class="tekst">
+                <p class="title">The dinosaur family</p>
+                <p class="description">
+                  Long ago there was a family of dinosaurs that lived in a
+                  deserted place. The little dinosaur is making a new friend.
+                </p>
+              </div>
+
+              <img
+                src="/Rectangle 135.svg"
+                class="vlag-icon"
+                alt="engelse-vlag"
+              />
+
+              <div class="iconen-onder">
+                <img
+                  src="/Group 316 (1).svg"
+                  class="links-onder"
+                  alt="playbutton-blue"
+                />
+                <p class="time">3 min. 5 sec</p>
+
+                <div class="rechts-onder">
+                  <img
+                    src="/Frame 64.svg"
+                    class="download-icon"
+                    alt="download-icon"
+                  />
+                  <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
+                </div>
+              </div>
+            </article>
+
+            <article class="story-content">
+              <img src="/Frame 105.svg" class="schildpad" alt="bomen" />
+
+              <div class="tekst">
+                <p class="title">Toys on the Orient Express</p>
+                <p class="description">
+                  A child looses his toy during a train ride. He is determined
+                  to find it back.
+                </p>
+              </div>
+
+              <img
+                src="/Rectangle 135.svg"
+                class="vlag-icon"
+                alt="engelse-vlag"
+              />
+
+              <div class="iconen-onder">
+                <img
+                  src="/Group 316 (1).svg"
+                  class="links-onder"
+                  alt="playbutton-blue"
+                />
+                <p class="time">3 min. 5 sec</p>
+
+                <div class="rechts-onder">
+                  <img
+                    src="/Frame 64.svg"
+                    class="download-icon"
+                    alt="download-icon"
+                  />
+                  <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
+                </div>
+              </div>
+            </article>
           </article>
         </article>
-
-        <!-- Slide 2 -->
-        <article class="carousel-slide">
-          <article class="story-content">
-            <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
-
-            <div class="tekst">
-              <p class="title">The dinosaur family</p>
-              <p class="description">
-                Long ago there was a family of dinosaurs that lived in a
-                deserted place. The little dinosaur is making a new friend.
-              </p>
-            </div>
-
-            <img
-              src="/Rectangle 135.svg"
-              class="vlag-icon"
-              alt="engelse-vlag"
-            />
-
-            <div class="iconen-onder">
-              <img
-                src="/Group 316 (1).svg"
-                class="links-onder"
-                alt="playbutton-blue"
-              />
-              <p class="time">3 min. 5 sec</p>
-
-              <div class="rechts-onder">
-                <img
-                  src="/Frame 64.svg"
-                  class="download-icon"
-                  alt="download-icon"
-                />
-                <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
-              </div>
-            </div>
-          </article>
-          <article class="story-content">
-            <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
-
-            <div class="tekst">
-              <p class="title">The dinosaur family</p>
-              <p class="description">
-                Long ago there was a family of dinosaurs that lived in a
-                deserted place. The little dinosaur is making a new friend.
-              </p>
-            </div>
-
-            <img
-              src="/Rectangle 135.svg"
-              class="vlag-icon"
-              alt="engelse-vlag"
-            />
-
-            <div class="iconen-onder">
-              <img
-                src="/Group 316 (1).svg"
-                class="links-onder"
-                alt="playbutton-blue"
-              />
-              <p class="time">3 min. 5 sec</p>
-
-              <div class="rechts-onder">
-                <img
-                  src="/Frame 64.svg"
-                  class="download-icon"
-                  alt="download-icon"
-                />
-                <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
-              </div>
-            </div>
-          </article>
-          <article class="story-content">
-            <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
-
-            <div class="tekst">
-              <p class="title">The dinosaur family</p>
-              <p class="description">
-                Long ago there was a family of dinosaurs that lived in a
-                deserted place. The little dinosaur is making a new friend.
-              </p>
-            </div>
-
-            <img
-              src="/Rectangle 135.svg"
-              class="vlag-icon"
-              alt="engelse-vlag"
-            />
-
-            <div class="iconen-onder">
-              <img
-                src="/Group 316 (1).svg"
-                class="links-onder"
-                alt="playbutton-blue"
-              />
-              <p class="time">3 min. 5 sec</p>
-
-              <div class="rechts-onder">
-                <img
-                  src="/Frame 64.svg"
-                  class="download-icon"
-                  alt="download-icon"
-                />
-                <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
-              </div>
-            </div>
-          </article>
-        </article>
-
-        <!-- -- Slide 3 -->
-        <article class="carousel-slide">
-          <article class="story-content">
-            <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
-
-            <div class="tekst">
-              <p class="title">The dinosaur family</p>
-              <p class="description">
-                Long ago there was a family of dinosaurs that lived in a
-                deserted place. The little dinosaur is making a new friend.
-              </p>
-            </div>
-
-            <img
-              src="/Rectangle 135.svg"
-              class="vlag-icon"
-              alt="engelse-vlag"
-            />
-
-            <div class="iconen-onder">
-              <img
-                src="/Group 316 (1).svg"
-                class="links-onder"
-                alt="playbutton-blue"
-              />
-              <p class="time">3 min. 5 sec</p>
-
-              <div class="rechts-onder">
-                <img
-                  src="/Frame 64.svg"
-                  class="download-icon"
-                  alt="download-icon"
-                />
-                <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
-              </div>
-            </div>
-          </article>
-          <article class="story-content">
-            <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
-
-            <div class="tekst">
-              <p class="title">The dinosaur family</p>
-              <p class="description">
-                Long ago there was a family of dinosaurs that lived in a
-                deserted place. The little dinosaur is making a new friend.
-              </p>
-            </div>
-
-            <img
-              src="/Rectangle 135.svg"
-              class="vlag-icon"
-              alt="engelse-vlag"
-            />
-
-            <div class="iconen-onder">
-              <img
-                src="/Group 316 (1).svg"
-                class="links-onder"
-                alt="playbutton-blue"
-              />
-              <p class="time">3 min. 5 sec</p>
-
-              <div class="rechts-onder">
-                <img
-                  src="/Frame 64.svg"
-                  class="download-icon"
-                  alt="download-icon"
-                />
-                <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
-              </div>
-            </div>
-          </article>
-
-          <article class="story-content">
-            <img src="/Frame 105.svg" class="schildpad" alt="bomen" />
-
-            <div class="tekst">
-              <p class="title">Toys on the Orient Express</p>
-              <p class="description">
-                A child looses his toy during a train ride. He is determined to
-                find it back.
-              </p>
-            </div>
-
-            <img
-              src="/Rectangle 135.svg"
-              class="vlag-icon"
-              alt="engelse-vlag"
-            />
-
-            <div class="iconen-onder">
-              <img
-                src="/Group 316 (1).svg"
-                class="links-onder"
-                alt="playbutton-blue"
-              />
-              <p class="time">3 min. 5 sec</p>
-
-              <div class="rechts-onder">
-                <img
-                  src="/Frame 64.svg"
-                  class="download-icon"
-                  alt="download-icon"
-                />
-                <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
-              </div>
-            </div>
-          </article>
-        </article>
-
-        <article class="content-container">
-          <article class="right-content"></article>
-          <article class="right-content"></article>
-          <article class="right-content"></article>
-        </article>
-      </article>
-
+        <!-- 
       <div class="carousel-button">
         <button id="prev" on:click={prevSlide}>
           <img src="/left.svg" class="add-icon" alt="add-icon" />
         </button>
 
-        <!-- Labels om de slides te besturen -->
+
         <div class="carousel-controls">
           <label for="slide1"></label>
           <label for="slide2"></label>
@@ -455,108 +580,87 @@
         <button id="next" on:click={nextSlide}>
           <img src="/right.svg" class="add-icon" alt="add-icon" />
         </button>
+      </div> -->
       </div>
-    </form>
 
-    <section class="content">
-      <h2>Liked playlist</h2>
+      <section class="content">
+        <h2>Liked playlist</h2>
 
-      <article class="pinguin-kaart">
-        <article class="pinguin-card">
-          <img src="/Frame 27 (1).svg" class="pinguin" alt="pinguin" />
-          <p class="pinguin-tekst">Penguin activities!</p>
+        <article class="pinguin-kaart">
+          <article class="pinguin-card">
+            <img src="/Frame 27 (1).svg" class="pinguin" alt="pinguin" />
+            <p class="pinguin-tekst">Penguin activities!</p>
 
-          <div class="pinguin-icon">
-            <img
-              src="/Group 316.svg"
-              class="playbutton"
-              alt="play-button"
-            />
-            <p class="tijd">31 min. 55 sec</p>
+            <div class="pinguin-icon">
+              <img src="/Group 316.svg" class="playbutton" alt="play-button" />
+              <p class="tijd">31 min. 55 sec</p>
 
-            <img src="/Heart.svg" class="heart-icon" alt="heart-icon" />
-          </div>
+              <img src="/Heart.svg" class="heart-icon" alt="heart-icon" />
+            </div>
+          </article>
+
+          <article class="pinguin-card">
+            <img src="/Frame 27 (4).svg" class="pinguin" alt="pinguin" />
+            <p class="pinguin-tekst">
+              Christmas stories, for the festive season.
+            </p>
+
+            <div class="pinguin-icons">
+              <img src="/Group 316.svg" class="playbutton" alt="play-button" />
+              <p class="tijd">31 min. 55 sec</p>
+
+              <img src="/Heart.svg" class="heart-icon" alt="heart-icon" />
+            </div>
+          </article>
         </article>
+      </section>
 
-        <article class="pinguin-card">
-          <img src="/Frame 27 (4).svg" class="pinguin" alt="pinguin" />
-          <p class="pinguin-tekst">
-            Christmas stories, for the festive season.
-          </p>
+      <section class="last-content">
+        <h2>Suggested playlist</h2>
 
-          <div class="pinguin-icons">
-            <img
-              src="/Group 316.svg"
-              class="playbutton"
-              alt="play-button"
-            />
-            <p class="tijd">31 min. 55 sec</p>
+        <article class="pinguin-kaart">
+          <article class="pinguin-card">
+            <img src="/Frame 27 (1).svg" class="pinguin" alt="pinguin" />
+            <p class="pinguin-tekst">Penguin activities!</p>
 
-            <img src="/Heart.svg" class="heart-icon" alt="heart-icon" />
-          </div>
+            <div class="pinguin-icon">
+              <img src="/Group 316.svg" class="playbutton" alt="play-button" />
+              <p class="tijd">31 min. 55 sec</p>
+
+              <img src="/Icon.svg" class="empty-heart" alt="empty-heart-icon" />
+            </div>
+          </article>
+
+          <article class="pinguin-card">
+            <img src="/Frame 27 (4).svg" class="pinguin" alt="pinguin" />
+            <p class="pinguin-tekst">
+              Christmas stories, for the festive season.
+            </p>
+
+            <div class="pinguin-icons">
+              <img src="/Group 316.svg" class="playbutton" alt="play-button" />
+              <p class="tijd">31 min. 55 sec</p>
+
+              <img src="/Icon.svg" class="empty-heart" alt="empty-heart-icon" />
+            </div>
+          </article>
+
+          <article class="pinguin-card">
+            <img src="/Frame 27 (4).svg" class="pinguin" alt="pinguin" />
+            <p class="pinguin-tekst">
+              Christmas stories, for the festive season.
+            </p>
+
+            <div class="pinguin-icons">
+              <img src="/Group 316.svg" class="playbutton" alt="play-button" />
+              <p class="tijd">31 min. 55 sec</p>
+
+              <img src="/Icon.svg" class="empty-heart" alt="empty-heart-icon" />
+            </div>
+          </article>
         </article>
-      </article>
-    </section>
-
-    <section class="last-content">
-      <h2>Suggested playlist</h2>
-
-      <article class="pinguin-kaart">
-        <article class="pinguin-card">
-          <img src="/Frame 27 (1).svg" class="pinguin" alt="pinguin" />
-          <p class="pinguin-tekst">Penguin activities!</p>
-
-          <div class="pinguin-icon">
-            <img
-              src="/Group 316.svg"
-              class="playbutton"
-              alt="play-button"
-            />
-            <p class="tijd">31 min. 55 sec</p>
-
-            <img src="/Icon.svg" class="empty-heart" alt="empty-heart-icon" />
-          </div>
-        </article>
-
-        <article class="pinguin-card">
-          <img src="/Frame 27 (4).svg" class="pinguin" alt="pinguin" />
-          <p class="pinguin-tekst">
-            Christmas stories, for the festive season.
-          </p>
-
-          <div class="pinguin-icons">
-            <img
-              src="/Group 316.svg"
-              class="playbutton"
-              alt="play-button"
-            />
-            <p class="tijd">31 min. 55 sec</p>
-
-            <img src="/Icon.svg" class="empty-heart" alt="empty-heart-icon" />
-          </div>
-        </article>
-
-        <article class="pinguin-card">
-          <img src="/Frame 27 (4).svg" class="pinguin" alt="pinguin" />
-          <p class="pinguin-tekst">
-            Christmas stories, for the festive season.
-          </p>
-
-          <div class="pinguin-icons">
-            <img
-              src="/Group 316.svg"
-              class="playbutton"
-              alt="play-button"
-            />
-            <p class="tijd">31 min. 55 sec</p>
-
-            <img src="/Icon.svg" class="empty-heart" alt="empty-heart-icon" />
-          </div>
-        </article>
-
-
-      </article>
-    </section>
+      </section>
+    <!-- </ul> -->
   </main>
 </body>
 
@@ -564,9 +668,9 @@
   :root {
     --playlist-bg-color: #471871;
     --btn-color: #1cb854;
-    --btn-color-two: #37C6AB;
+    --btn-color-two: #37c6ab;
 
-    --card-bg-color-two:#494375;
+    --card-bg-color-two: #494375;
     --card-bg-color: #f3f3f3;
     --card-time-font-size: 8px;
     --card-description-font-size: 11px;
@@ -576,8 +680,6 @@
     --languages-font-color: #1f1230;
     --languages-font-size: 12px;
     --carousel-btn: #9264f4;
-
-
   }
 
   body {
@@ -617,7 +719,7 @@
   }
 
   a.button-listening:nth-child(3) {
-    background-color: #37C6AB;
+    background-color: #37c6ab;
     opacity: 40%;
   }
 
@@ -678,7 +780,6 @@
     transform: translateX(-10px);
   }
 
-
   img.playlist-icon {
     margin-top: 22px;
     margin-bottom: 8px;
@@ -711,7 +812,6 @@
     margin: 0;
     margin-left: 5px;
   }
-
 
   .playlist-text {
     color: white;
@@ -776,7 +876,68 @@
     transform: translateX(-75px);
   }
 
-  form.carousel-container {
+  /* ---- */
+
+
+  .slide ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    height: 50vh;
+    margin-left: 20px;
+  }
+
+  .slide li {
+    margin: 10px 0;
+    flex: 1;
+    border: 1px solid #ccc;
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  figure {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+
+  figure img {
+    max-width: 150px;
+    margin-right: 20px;
+    height: auto;
+  }
+
+
+  figure figcaption {
+    flex-grow: 1;
+  }
+
+  h3 {
+    margin: 0 0 5px;
+    font-size: 16px;
+  }
+
+  p.beschrijving {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    width: 280px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+  }
+
+  /* ---- */
+
+  .carousel-container {
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -813,20 +974,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-left: 155px;
   }
-
-  article.right-content {
-    padding: 20px;
-    position: relative;
-    margin: 5px;
-    margin-right: 15px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100px;
-    max-width: 800px;
-    height: 65px;
-    background-color:var(--card-bg-color);
-  }  
 
   .title {
     font-weight: 600;
@@ -907,7 +1054,6 @@
     display: flex;
   }
 
-
   div.carousel-button {
     display: flex;
     justify-content: space-evenly;
@@ -918,7 +1064,7 @@
     margin-bottom: 30px;
   }
 
-  #prev{
+  #prev {
     background-color: var(--carousel-btn);
     opacity: 50%;
   }
@@ -926,7 +1072,6 @@
   #next {
     background-color: var(--carousel-btn);
   }
-
 
   /* Styling voor de controls (indicators) */
   .carousel-controls {
@@ -969,7 +1114,7 @@
     background-color: white;
     padding: 10px;
     transform: translateX(-14px);
-}
+  }
 
   img.pinguin {
     width: 105px;
@@ -993,8 +1138,8 @@
     align-items: center;
     justify-content: space-around;
     margin-top: 15px;
-}
-  
+  }
+
   .pinguin-icons {
     display: flex;
     align-items: center;
@@ -1013,7 +1158,7 @@
     transform: translateX(-2px);
   }
 
-  img.heart-icon  {
+  img.heart-icon {
     width: 28px;
     height: 30px;
     transform: translateX(5px);
@@ -1023,9 +1168,9 @@
     margin-top: 22px;
     margin-bottom: 8px;
   }
-  
+
   p.tijd {
     transform: translateX(2px);
   }
-</style>
 
+</style>
