@@ -36,7 +36,6 @@ Vertaal het reeds bestaande grafische design naar een web applicatie of mobiele 
 
 * HTML
 * CSS
-* Node JS
 * JavaScript
 * Sveltekit
 * Directus
@@ -54,5 +53,4 @@ Vertaal het reeds bestaande grafische design naar een web applicatie of mobiele 
 * To start the project you firstly have load the repo from Github Desktop.
 * Navigate to the branch of this pull-request
 * Open the terminal and enter npm install to install the dependencies.
-* To start the project enter npm run dev to start the project. Now you will be redirected to "https://localhost:5173", You can see the homepage by typing https://localhost:5173/home. 
-* To see the other pages type "https://localhost:5173/playlist, "https://localhost:5173/onboarding-1 .
+* To see the other pages type "https://localhost:5173/home", "https://localhost:5173/playlist", "https://localhost:5173/onboarding-1" .
