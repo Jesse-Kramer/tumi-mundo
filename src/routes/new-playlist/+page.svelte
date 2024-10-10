@@ -2,31 +2,35 @@
   import Story from '../../components/story.svelte'
 </script> -->
 
+
 <script>
-  // Maak een variabele voor de slide met daarin een array aan voor de verschillende slides
-  let slides = ["Slide 1", "Slide 2", "Slide 3"];
-  let currentSlide = 0;
-  // Toon de eerste slide al (omdat 0 = 1)
 
-  function goToSlide(slideIndex) {
-    if (slideIndex >= slides.length) {
-      currentSlide = 0; // Terug naar de eerste slide
-    } else if (slideIndex < 0) {
-      currentSlide = slides.length - 1; // Ga naar de laatste slide
-    } else {
-      currentSlide = slideIndex; // Ga naar de aangegeven slide
+const slides = document.querySelectorAll('input[name="carousel"]');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+let currentIndex = 0; 
+
+function goToSlide(index) {
+    if (index >= 0 && index < slides.length) {
+        slides[index].checked = true;
+        currentIndex = index;
     }
-  }
+}
 
-  // Event listeners voor knoppen
-  function nextSlide() {
-    goToSlide(currentSlide + 1);
-  }
 
-  function prevSlide() {
-    goToSlide(currentSlide - 1);
-  }
+prevBtn.addEventListener('click', () => {
+    goToSlide(currentIndex - 1);
+});
+
+
+nextBtn.addEventListener('click', () => {
+    goToSlide(currentIndex + 1);
+});
+
 </script>
+
+
 
 <a href="/">Go to Home</a>
 
@@ -91,125 +95,245 @@
       </div>
     </section>
 
-    <!-- <ul> -->
-      <!-- Eerste slide met drie items -->
-      <li class="slide">
-        <ul>
-          <li>
-            <figure>
-              <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
-              <figcaption>
-                <h3>The dinosaur family</h3>
-                <p class="beschrijving">
-                  Long ago there was a family of dinosaurs that lived in a
-                  deserted place. The little dinosaur is making a new friend.
-                </p>
-              </figcaption>
-            </figure>
+    <!-- SLIDE -->
 
-            <img
-              src="/Rectangle 135.svg"
-              class="vlag-icon"
-              alt="engelse-vlag"
-            />
 
-            <div class="iconen-onder">
-              <img
-                src="/Group 316 (1).svg"
-                class="links-onder"
-                alt="playbutton-blue"
-              />
-              <p class="time">3 min. 5 sec</p>
 
-              <div class="rechts-onder">
-                <img
-                  src="/Frame 64.svg"
-                  class="download-icon"
-                  alt="download-icon"
-                />
-                <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
-              </div>
-            </div>
-          </li>
-
-          <li>
-            <figure>
-              <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
-              <figcaption>
-                <h3>Six o’clock</h3>
-                <p class="beschrijving">
-                  A group of friends try to take over the playground. Jesper and
-                  Wylan want to take over the swings, but one person stands in
-                  their way.
-                </p>
-              </figcaption>
-            </figure>
-
-            <img
-              src="/Rectangle 135.svg"
-              class="vlag-icon"
-              alt="engelse-vlag"
-            />
-
-            <div class="iconen-onder">
-              <img
-                src="/Group 316 (1).svg"
-                class="links-onder"
-                alt="playbutton-blue"
-              />
-              <p class="time">3 min. 5 sec</p>
-
-              <div class="rechts-onder">
-                <img
-                  src="/Frame 64.svg"
-                  class="download-icon"
-                  alt="download-icon"
-                />
-                <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
-              </div>
-            </div>
-          </li>
-
-          <li>
-            <figure>
-              <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
-              <figcaption>
-                <h3>The dinosaur family</h3>
-                <p class="beschrijving">
-                  Long ago there was a family of dinosaurs that lived in a
-                  deserted place. The little dinosaur is making a new friend.
-                </p>
-              </figcaption>
-            </figure>
-
-            <img
-              src="/Rectangle 135.svg"
-              class="vlag-icon"
-              alt="engelse-vlag"
-            />
-
-            <div class="iconen-onder">
-              <img
-                src="/Group 316 (1).svg"
-                class="links-onder"
-                alt="playbutton-blue"
-              />
-              <p class="time">3 min. 5 sec</p>
-
-              <div class="rechts-onder">
-                <img
-                  src="/Frame 64.svg"
-                  class="download-icon"
-                  alt="download-icon"
-                />
-                <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
-              </div>
-            </div>
-          </li>
-        </ul>
+  <div class="container">
+    <div class="carousel-container">
+    
+      <input type="radio" id="slide1" name="carousel" checked>
+    <input type="radio" id="slide2" name="carousel">
+    <input type="radio" id="slide3" name="carousel">
+      <ul class="carousel">
+  <!-- Eerste slide -->
+  <li class="slide">
+    <ul class="slide-content">
+      <li>
+        <figure>
+          <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
+          <figcaption>
+            <h3>The dinosaur family</h3>
+            <p class="beschrijving">
+              Long ago there was a family of dinosaurs that lived in a deserted place. The little dinosaur is making a new friend.
+            </p>
+          </figcaption>
+        </figure>
+        <img src="/Rectangle 135.svg" class="vlag-icon" alt="engelse-vlag" />
+        <div class="iconen-onder">
+          <img src="/Group 316 (1).svg" class="links-onder" alt="playbutton-blue" />
+          <p class="time">3 min. 5 sec</p>
+          <div class="rechts-onder">
+            <img src="/Frame 64.svg" class="download-icon" alt="download-icon" />
+            <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
+          </div>
+        </div>
       </li>
 
-      <div class="carousel-container">
+      <li>
+        <figure>
+          <img src="/Frame 104.svg" class="schildpad" alt="pinguin" />
+          <figcaption>
+            <h3>Six o’clock</h3>
+            <p class="beschrijving">
+              A group of friends try to take over the playground. Jesper and Wylan want to take over the swings, but one person stands in their way.
+            </p>
+          </figcaption>
+        </figure>
+        <img src="/Rectangle 135.svg" class="vlag-icon" alt="engelse-vlag" />
+        <div class="iconen-onder">
+          <img src="/Group 316 (1).svg" class="links-onder" alt="playbutton-blue" />
+          <p class="time">3 min. 5 sec</p>
+          <div class="rechts-onder">
+            <img src="/Frame 64.svg" class="download-icon" alt="download-icon" />
+            <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <figure>
+          <img src="/Frame 105.svg" class="schildpad" alt="schilpad" />
+          <figcaption>
+            <h3>Toys on the Orient Express</h3>
+            <p class="beschrijving">
+              A child looses his toy during a train ride. He is determined to find it back.
+            </p>
+          </figcaption>
+        </figure>
+        <img src="/Rectangle 135.svg" class="vlag-icon" alt="engelse-vlag" />
+        <div class="iconen-onder">
+          <img src="/Group 316 (1).svg" class="links-onder" alt="playbutton-blue" />
+          <p class="time">3 min. 5 sec</p>
+          <div class="rechts-onder">
+            <img src="/Frame 64.svg" class="download-icon" alt="download-icon" />
+            <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
+          </div>
+        </div>
+      </li>
+    </ul>
+  </li>
+
+  <!-- Tweede slide -->
+  <li class="slide">
+    <ul class="slide-content">
+      <li>
+        <figure>
+          <img src="/Frame 105.svg" class="schildpad" alt="schilpad" />
+          <figcaption>
+            <h3>Toys on the Orient Express</h3>
+            <p class="beschrijving">
+              A child looses his toy during a train ride. He is determined to find it back.
+            </p>
+          </figcaption>
+        </figure>
+        <img src="/Rectangle 135.svg" class="vlag-icon" alt="engelse-vlag" />
+        <div class="iconen-onder">
+          <img src="/Group 316 (1).svg" class="links-onder" alt="playbutton-blue" />
+          <p class="time">3 min. 5 sec</p>
+          <div class="rechts-onder">
+            <img src="/Frame 64.svg" class="download-icon" alt="download-icon" />
+            <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <figure>
+          <img src="/Frame 104.svg" class="schildpad" alt="pinguin" />
+          <figcaption>
+            <h3>Six o’clock</h3>
+            <p class="beschrijving">
+              A group of friends try to take over the playground. Jesper and Wylan want to take over the swings, but one person stands in their way.
+            </p>
+          </figcaption>
+        </figure>
+        <img src="/Rectangle 135.svg" class="vlag-icon" alt="engelse-vlag" />
+        <div class="iconen-onder">
+          <img src="/Group 316 (1).svg" class="links-onder" alt="playbutton-blue" />
+          <p class="time">3 min. 5 sec</p>
+          <div class="rechts-onder">
+            <img src="/Frame 64.svg" class="download-icon" alt="download-icon" />
+            <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <figure>
+          <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
+          <figcaption>
+            <h3>The dinosaur family</h3>
+            <p class="beschrijving">
+              Long ago there was a family of dinosaurs that lived in a deserted place. The little dinosaur is making a new friend.
+            </p>
+          </figcaption>
+        </figure>
+        <img src="/Rectangle 135.svg" class="vlag-icon" alt="engelse-vlag" />
+        <div class="iconen-onder">
+          <img src="/Group 316 (1).svg" class="links-onder" alt="playbutton-blue" />
+          <p class="time">3 min. 5 sec</p>
+          <div class="rechts-onder">
+            <img src="/Frame 64.svg" class="download-icon" alt="download-icon" />
+            <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
+          </div>
+        </div>
+      </li>
+      
+      <!-- Voeg hier de volgende drie lijstitems toe, zoals in de eerste slide -->
+    </ul>
+  </li>
+
+  <!-- Derde slide -->
+  <li class="slide">
+    <ul class="slide-content">
+      <li>
+        <figure>
+          <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
+          <figcaption>
+            <h3>The dinosaur family</h3>
+            <p class="beschrijving">
+              Long ago there was a family of dinosaurs that lived in a deserted place. The little dinosaur is making a new friend.
+            </p>
+          </figcaption>
+        </figure>
+        <img src="/Rectangle 135.svg" class="vlag-icon" alt="engelse-vlag" />
+        <div class="iconen-onder">
+          <img src="/Group 316 (1).svg" class="links-onder" alt="playbutton-blue" />
+          <p class="time">3 min. 5 sec</p>
+          <div class="rechts-onder">
+            <img src="/Frame 64.svg" class="download-icon" alt="download-icon" />
+            <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
+          </div>
+        </div>
+      </li>
+
+
+      <li>
+        <figure>
+          <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
+          <figcaption>
+            <h3>The dinosaur family</h3>
+            <p class="beschrijving">
+              Long ago there was a family of dinosaurs that lived in a deserted place. The little dinosaur is making a new friend.
+            </p>
+          </figcaption>
+        </figure>
+        <img src="/Rectangle 135.svg" class="vlag-icon" alt="engelse-vlag" />
+        <div class="iconen-onder">
+          <img src="/Group 316 (1).svg" class="links-onder" alt="playbutton-blue" />
+          <p class="time">3 min. 5 sec</p>
+          <div class="rechts-onder">
+            <img src="/Frame 64.svg" class="download-icon" alt="download-icon" />
+            <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
+          </div>
+        </div>
+      </li>
+
+
+      <li>
+        <figure>
+          <img src="/Frame 103.svg" class="schildpad" alt="schilpad" />
+          <figcaption>
+            <h3>The dinosaur family</h3>
+            <p class="beschrijving">
+              Long ago there was a family of dinosaurs that lived in a deserted place. The little dinosaur is making a new friend.
+            </p>
+          </figcaption>
+        </figure>
+        <img src="/Rectangle 135.svg" class="vlag-icon" alt="engelse-vlag" />
+        <div class="iconen-onder">
+          <img src="/Group 316 (1).svg" class="links-onder" alt="playbutton-blue" />
+          <p class="time">3 min. 5 sec</p>
+          <div class="rechts-onder">
+            <img src="/Frame 64.svg" class="download-icon" alt="download-icon" />
+            <img src="/Group 4.svg" class="add-icon" alt="add-icon" />
+          </div>
+        </div>
+      </li>
+      <!-- Voeg hier weer drie lijstitems toe -->
+    </ul>
+  </li>
+</ul>
+
+<div class="carousel-controls">
+  <button id="prevBtn" class="carousel-button" aria-label="Vorige slide"><</button>
+  
+  <div class="carousel-nav" role="tablist" aria-label="Slide navigatie">
+      <button class="nav-dot" role="tab" aria-label="Slide 1" aria-controls="slide1"></button>
+      <button class="nav-dot" role="tab" aria-label="Slide 2" aria-controls="slide2"></button>
+      <button class="nav-dot" role="tab" aria-label="Slide 3" aria-controls="slide3"></button>
+  </div>
+  
+  <button id="nextBtn" class="carousel-button" aria-label="Volgende slide">></button>
+</div>
+
+
+</div>
+
+</div>
+<!-- SLIDE END -->
+      <!-- <div class="carousel-container">
    
         <input
           type="radio"
@@ -228,7 +352,7 @@
           name="carousel"
           id="slide3"
           checked={currentSlide === 2}
-        />
+        /> -->
 
         <article class="carousel">
           <article class="carousel-slide">
@@ -564,25 +688,10 @@
             </article>
           </article>
         </article>
-        <!-- 
-      <div class="carousel-button">
-        <button id="prev" on:click={prevSlide}>
-          <img src="/left.svg" class="add-icon" alt="add-icon" />
-        </button>
+        
+     
 
-
-        <div class="carousel-controls">
-          <label for="slide1"></label>
-          <label for="slide2"></label>
-          <label for="slide3"></label>
-        </div>
-
-        <button id="next" on:click={nextSlide}>
-          <img src="/right.svg" class="add-icon" alt="add-icon" />
-        </button>
-      </div> -->
-      </div>
-
+     <!-- TEST -->
       <section class="content">
         <h2>Liked playlist</h2>
 
@@ -660,7 +769,7 @@
           </article>
         </article>
       </section>
-    <!-- </ul> -->
+
   </main>
 </body>
 
@@ -877,24 +986,54 @@
   }
 
   /* ---- */
+  .container {
+    width: 100%;
+    overflow: hidden; 
+}
 
-
-  .slide ul {
+.carousel {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px;
-    height: 50vh;
-    margin-left: 20px;
-  }
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; 
+}
 
-  .slide li {
-    margin: 10px 0;
-    flex: 1;
-    border: 1px solid #ccc;
-    background-color: var(--card-bg-color);
+.carousel ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0; 
+}
+
+.slide {
+    display: flex; 
+    scroll-snap-align: start; 
+    width: 100vw; 
+}
+
+.slide-content {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    /* padding: 20px;  */
+    height: 60vh; 
+    position: relative;
+}
+
+.slide-content li {
+    margin: 10px 0; 
+    margin-left: 10px;
+    flex: 1; 
+    border: 1px solid #ccc; 
+    background-color: #f9f9f9;
     border-radius: 8px;
-    overflow: hidden;
+    overflow: hidden; 
+}
+
+.vlag-icon {
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    width: 24px;
   }
 
   figure {
@@ -902,7 +1041,7 @@
     align-items: center;
     text-align: left;
     margin-left: 20px;
-    margin-top: 10px;
+    margin-top: 10px; 
   }
 
   figure img {
@@ -926,7 +1065,7 @@
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 10px;
-    width: 280px;
+    width: 220px;
     text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box;
@@ -934,6 +1073,123 @@
     -webkit-box-orient: vertical;
     white-space: normal;
   }
+
+  p.time {
+    margin-top: 10px;
+    margin-right: 70px;
+    font-size: 16px;
+  }
+
+  .iconen-onder {
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .rechts-onder {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 2px;
+  }
+
+  img.links-onder {
+    margin-left: 15px;
+    width: 24px;
+  }
+
+  img.download-icon {
+    width: 28px;
+  }
+
+  img.add-icon {
+    width: 20px;
+  }
+
+
+/* Hide radio buttons */
+input[type="radio"] {
+    display: none;
+}
+
+/* Styling for navigation dots */
+.nav-dot {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+input#slide1:checked ~ .carousel ul {
+    transform: translateX(0);
+}
+
+input#slide2:checked ~ .carousel ul {
+    transform: translateX(-100%);
+}
+
+input#slide3:checked ~ .carousel ul {
+    transform: translateX(-200%);
+}
+
+/* Active navigation dot styling */
+input#slide1:checked ~ .carousel-nav label[for="slide1"],
+input#slide2:checked ~ .carousel-nav label[for="slide2"],
+input#slide3:checked ~ .carousel-nav label[for="slide3"] {
+    background-color: #007BFF;
+}
+
+/* Smooth transition for carousel slides */
+.carousel ul {
+    transition: 0.6s ease-in-out;
+}
+
+/* De wrapper voor de knoppen en de navigatiedots */
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Styling voor de knoppen */
+.carousel-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.carousel-button:hover {
+    background-color: #0056b3;
+}
+
+/* De navigatiedots */
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Ruimte tussen de dots */
+}
+
+.nav-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.nav-dot:hover {
+    background-color: #666;
+}
+
 
   /* ---- */
 
@@ -943,9 +1199,9 @@
     overflow: hidden;
   }
 
-  input[type="radio"] {
+  /* input[type="radio"] {
     display: none;
-  }
+  } */
 
   article.carousel {
     display: flex;
@@ -996,11 +1252,6 @@
     font-size: 10px;
   }
 
-  .time {
-    margin-top: 10px;
-    margin-right: 129px;
-  }
-
   .tekst {
     flex-grow: 1;
     font-size: 8px;
@@ -1018,26 +1269,12 @@
     transform: translateX(-8px);
   }
 
-  .vlag-icon {
-    position: absolute;
-    top: 11px;
-    right: 10px;
-  }
 
-  .iconen-onder {
-    position: absolute;
+
+  /* .iconen-onder {
     margin-right: 10px;
-    margin-bottom: 5px;
-    margin-top: 10px;
-    bottom: 5px;
-    left: 0;
-    right: 0;
     display: flex;
     justify-content: space-between;
-  }
-
-  .links-onder {
-    margin-left: 93px;
   }
 
   .rechts-onder {
@@ -1047,8 +1284,22 @@
     margin-top: 2px;
   }
 
-  /* Laat alleen de geselecteerde slide zien */
-  #slide1:checked ~ .carousel .carousel-slide:nth-child(1),
+  img.links-onder {
+    margin-left: 15px;
+    width: 24px;
+  }
+
+  img.download-icon {
+    width: 28px;
+  }
+
+  img.add-icon {
+    width: 20px;
+  } */
+  
+
+
+#slide1:checked ~ .carousel .carousel-slide:nth-child(1),
   #slide2:checked ~ .carousel .carousel-slide:nth-child(2),
   #slide3:checked ~ .carousel .carousel-slide:nth-child(3) {
     display: flex;
@@ -1073,8 +1324,7 @@
     background-color: var(--carousel-btn);
   }
 
-  /* Styling voor de controls (indicators) */
-  .carousel-controls {
+  /* .carousel-controls {
     display: flex;
     text-align: center;
     margin-top: 10px;
@@ -1090,7 +1340,8 @@
     margin: 0 5px;
     cursor: pointer;
     transition: 0.3s ease;
-  }
+  }   */
+
 
   section.last-content {
     transform: translateX(65px);
