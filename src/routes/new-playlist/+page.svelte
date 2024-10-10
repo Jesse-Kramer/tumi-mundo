@@ -5,28 +5,61 @@
 
 <script>
 
-const slides = document.querySelectorAll('input[name="carousel"]');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
+// const slides = document.querySelectorAll('input[name="carousel"]');
+// const prevBtn = document.getElementById('prevBtn');
+// const nextBtn = document.getElementById('nextBtn');
 
-let currentIndex = 0; 
+// let currentIndex = 0; 
 
-function goToSlide(index) {
-    if (index >= 0 && index < slides.length) {
-        slides[index].checked = true;
-        currentIndex = index;
+// function goToSlide(index) {
+//     if (index >= 0 && index < slides.length) {
+//         slides[index].checked = true;
+//         currentIndex = index;
+//     }
+// }
+
+
+// prevBtn.addEventListener('click', () => {
+//     goToSlide(currentIndex - 1);
+// });
+
+
+// nextBtn.addEventListener('click', () => {
+//     goToSlide(currentIndex + 1);
+// });
+
+
+let currentSlide = 0; // Huidige slide-index
+  const totalSlides = 3; // Aantal slides
+
+  // Ga naar een specifieke slide
+  function goToSlide(slideIndex) {
+    if (slideIndex >= totalSlides) {
+      currentSlide = 0; // Terug naar de eerste slide
+    } else if (slideIndex < 0) {
+      currentSlide = totalSlides - 1; // Ga naar de laatste slide
+    } else {
+      currentSlide = slideIndex; // Ga naar de aangegeven slide
     }
-}
 
+    // Beweeg naar de juiste slide in de carousel door het juiste element te selecteren
+    const carousel = document.querySelector('.carousel');
+    const slideWidth = carousel.clientWidth; // Breedte van de slide/container
+    carousel.scrollTo({
+      left: currentSlide * slideWidth,
+      behavior: 'smooth' // Voor vloeiende overgangen
+    });
+  }
 
-prevBtn.addEventListener('click', () => {
-    goToSlide(currentIndex - 1);
-});
+  // Ga naar de volgende slide
+  function nextSlide() {
+    goToSlide(currentSlide + 1);
+  }
 
-
-nextBtn.addEventListener('click', () => {
-    goToSlide(currentIndex + 1);
-});
+  // Ga naar de vorige slide
+  function prevSlide() {
+    goToSlide(currentSlide - 1);
+  }
 
 </script>
 
@@ -101,10 +134,7 @@ nextBtn.addEventListener('click', () => {
 
   <div class="container">
     <div class="carousel-container">
-    
-      <input type="radio" id="slide1" name="carousel" checked>
-    <input type="radio" id="slide2" name="carousel">
-    <input type="radio" id="slide3" name="carousel">
+  
       <ul class="carousel">
   <!-- Eerste slide -->
   <li class="slide">
@@ -316,16 +346,21 @@ nextBtn.addEventListener('click', () => {
   </li>
 </ul>
 
-<div class="carousel-controls">
-  <button id="prevBtn" class="carousel-button" aria-label="Vorige slide"><</button>
+<div class="carousel-button">
+  <button on:click={prevSlide}  class="add-icon" aria-label="Vorige slide"></button>
   
-  <div class="carousel-nav" role="tablist" aria-label="Slide navigatie">
-      <button class="nav-dot" role="tab" aria-label="Slide 1" aria-controls="slide1"></button>
-      <button class="nav-dot" role="tab" aria-label="Slide 2" aria-controls="slide2"></button>
-      <button class="nav-dot" role="tab" aria-label="Slide 3" aria-controls="slide3"></button>
+  <div class="radio-buttons">
+    <input type="radio" name="carousel" id="slide1" value="0" checked on:click={() => goToSlide(0)}>
+    <label for="slide1">1</label>
+
+    <input type="radio" name="carousel" id="slide2" value="1" on:click={() => goToSlide(1)}>
+    <label for="slide2">2</label>
+
+    <input type="radio" name="carousel" id="slide3" value="2" on:click={() => goToSlide(2)}>
+    <label for="slide3">3</label>
   </div>
   
-  <button id="nextBtn" class="carousel-button" aria-label="Volgende slide">></button>
+  <button on:click={nextSlide} class="add-icon" aria-label="Volgende slide"></button>
 </div>
 
 
@@ -988,24 +1023,29 @@ nextBtn.addEventListener('click', () => {
   /* ---- */
   .container {
     width: 100%;
-    overflow: hidden; 
+    overflow-y: hidden;
 }
 
 .carousel {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory; 
+    scroll-behavior: smooth;
+    width: 100%;
 }
 
 .carousel ul {
     display: flex;
+    border-radius: 20px;
     list-style: none;
     padding: 0;
     margin: 0; 
+    gap: 10px;
 }
 
 .slide {
     display: flex; 
+    flex: 100%;
     scroll-snap-align: start; 
     width: 100vw; 
 }
@@ -1015,18 +1055,16 @@ nextBtn.addEventListener('click', () => {
     flex-direction: column; 
     justify-content: space-between; 
     /* padding: 20px;  */
-    height: 60vh; 
+    height: 55vh; 
     position: relative;
 }
 
 .slide-content li {
-    margin: 10px 0; 
+    margin: 2px; 
     margin-left: 10px;
     flex: 1; 
-    border: 1px solid #ccc; 
     background-color: #f9f9f9;
     border-radius: 8px;
-    overflow: hidden; 
 }
 
 .vlag-icon {
@@ -1107,12 +1145,65 @@ nextBtn.addEventListener('click', () => {
   }
 
 
-/* Hide radio buttons */
-input[type="radio"] {
+  .carousel-button {
+    display: flex;
+    justify-content: center; /* Zorgt ervoor dat de knoppen in het midden staan */
+    align-items: center;
+    gap: 50px; 
+    margin-right: 30px;
+    margin-top: 20px;
+  }
+
+
+  .add-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .radio-buttons input[type="radio"] {
+  display: none; /* Verberg de radio knoppen */
+}
+
+.radio-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.radio-buttons label {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color:var(--carousel-btn);
+  cursor: pointer;
+  text-align: center;
+}
+
+.radio-buttons input[type="radio"]:checked + label {
+  background-color: var(--card-bg-color-two);
+}
+
+button {
+  padding: 10px 20px;
+  background-color:var(--carousel-btn);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: rgba(116, 44, 168, 0.662);
+}
+
+
+/* input[type="radio"] {
     display: none;
 }
 
-/* Styling for navigation dots */
+
 .nav-dot {
     display: inline-block;
     width: 15px;
@@ -1135,19 +1226,19 @@ input#slide3:checked ~ .carousel ul {
     transform: translateX(-200%);
 }
 
-/* Active navigation dot styling */
+
 input#slide1:checked ~ .carousel-nav label[for="slide1"],
 input#slide2:checked ~ .carousel-nav label[for="slide2"],
 input#slide3:checked ~ .carousel-nav label[for="slide3"] {
     background-color: #007BFF;
 }
 
-/* Smooth transition for carousel slides */
+
 .carousel ul {
     transition: 0.6s ease-in-out;
 }
 
-/* De wrapper voor de knoppen en de navigatiedots */
+
 .carousel-controls {
     display: flex;
     align-items: center;
@@ -1156,7 +1247,7 @@ input#slide3:checked ~ .carousel-nav label[for="slide3"] {
     width: 100%;
 }
 
-/* Styling voor de knoppen */
+
 .carousel-button {
     background-color: #007BFF;
     color: white;
@@ -1171,11 +1262,11 @@ input#slide3:checked ~ .carousel-nav label[for="slide3"] {
     background-color: #0056b3;
 }
 
-/* De navigatiedots */
+
 .carousel-nav {
     display: flex;
     justify-content: center;
-    gap: 10px; /* Ruimte tussen de dots */
+    gap: 10px; 
 }
 
 .nav-dot {
@@ -1188,7 +1279,7 @@ input#slide3:checked ~ .carousel-nav label[for="slide3"] {
 
 .nav-dot:hover {
     background-color: #666;
-}
+} */
 
 
   /* ---- */
@@ -1199,13 +1290,10 @@ input#slide3:checked ~ .carousel-nav label[for="slide3"] {
     overflow: hidden;
   }
 
-  /* input[type="radio"] {
-    display: none;
-  } */
 
   article.carousel {
     display: flex;
-    transition: transform 0.5s ease;
+    transition:  0.5s ease;
   }
 
   .carousel-slide {
@@ -1299,7 +1387,7 @@ input#slide3:checked ~ .carousel-nav label[for="slide3"] {
   
 
 
-#slide1:checked ~ .carousel .carousel-slide:nth-child(1),
+/* #slide1:checked ~ .carousel .carousel-slide:nth-child(1),
   #slide2:checked ~ .carousel .carousel-slide:nth-child(2),
   #slide3:checked ~ .carousel .carousel-slide:nth-child(3) {
     display: flex;
@@ -1322,7 +1410,7 @@ input#slide3:checked ~ .carousel-nav label[for="slide3"] {
 
   #next {
     background-color: var(--carousel-btn);
-  }
+  } */
 
   /* .carousel-controls {
     display: flex;
