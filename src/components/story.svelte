@@ -1,4 +1,4 @@
-<!-- <script>
+<script>
   const stories = [
     { title: "The dinosaur family", description: "Long ago there was a family of dinosaurs that lived in a deserted place The little dinosaur is making a new friend"  ,playtime: "1 min, 3 sec"},
     { title: "Six o’clock", description: "  A group of friends try to take over the playground. Jesper and Wylan want to take over the swings, but one person stands in their way.", playtime: "3 min, 4 sec"},
