@@ -12,7 +12,7 @@
                 {#each data.accounts as account}
                     <li>{account.name}</li>
                     <li>{account.email}</li>
-                    <li>{account.password}</li>
+                    <li>{account.profile}</li>
                 {/each}
             </ul>
     {:else}
@@ -41,19 +41,10 @@
         {#if data.profiles && data.profiles.length > 0}
             <ul>
                 {#each data.profiles as profile}
-                    <li>{profile.name}</li>
+                    <li>{profile._of_child}</li>
                     <li>{profile.date_of_birth}</li>
-                    <li>{profile.languages}</li>
+                    <li>{profile.new_language_to_learn}</li>
                     <li>{profile.buddy}</li>
-                    <li>{profile.conditions}</li>
-                    <li>{profile.gender}</li>
-                    <li>{profile.liked_playlists}</li>
-                    <li>{profile.liked_stories}</li>
-                    <li>{profile.total_playtime}</li>
-                    <li>{profile.todays_playtime}</li>
-                    <li>{profile.stories_read}</li>
-                    <li>{profile.tests_taken}</li>
-                    <li>{profile.favourite_time}</li>
                 {/each}
             </ul>
     {:else}
@@ -63,37 +54,41 @@
     </article>
     <h2>Stories</h2>
     <article>
-        {#if data.stories && data.stories.length > 0}
+    {#each data.stories as story}
+        <h2>{story.title}</h2>
+        <p>{story.summary}</p>
+        {#if story.audios.length > 0}
             <ul>
-                {#each data.stories as story}
-                    <li>{story.title}</li>
-                    <li>{story.summary}</li>
-                    <li>{story.playtime}</li>
-                    <li>{story.season}</li>
-                    <li>{story.languages}</li>
-                    <li>{story.animal}</li>
+                {#each story.audios as audio}
+                    <li>
+                        <p>Audio File: <a href={audio.file} target="_blank">{audio.file}</a></p>
+                        <p>Voice Colours: {audio.voice_colours.join(', ')}</p>
+                        <p>Speaker Profile: {audio.speaker_profile}</p>
+                        <p>Language: {audio.language}</p>
+                    </li>
                 {/each}
             </ul>
-    {:else}
-        <!-- This will show if no people are available -->
-        <p>Er zijn geen stories</p>
-    {/if}
+        {:else}
+            <p>No audio available for this story.</p>
+        {/if}
+    {/each}
     </article>
-    <h2>Personal playlist</h2>
+    <h2>Playlists</h2>
     <article>
         {#if data.personal_playlists && data.personal_playlists.length > 0}
             <ul>
                 {#each data.personal_playlists as playlist}
-                    <li>{playlist.name}</li>
+                    <li>{playlist.title}</li>
+                    <li>{playlist.description}</li>
                     <li>{playlist.stories}</li>
-                    <li>{playlist.playtime}</li>
-                    <li>{playlist.languages}</li>
+                    <li>{playlist.slug}</li>
+                    <li>{playlist.language_id}</li>
                     <li>{playlist.creator}</li>
                 {/each}
             </ul>
     {:else}
         <!-- This will show if no people are available -->
-        <p>Er zijn geen stories</p>
+        <p>Er zijn geen playlists</p>
     {/if}
     </article>
 
@@ -102,12 +97,12 @@
         {#if data.languages && data.languages.length > 0}
             <ul>
                 {#each data.languages as language}
-                    <li>{language.name}</li>
+                    <li>{language.language}</li>
                 {/each}
             </ul>
     {:else}
         <!-- This will show if no people are available -->
-        <p>Er zijn geen stories</p>
+        <p>Er zijn geen languages</p>
     {/if}
     </article>
 </section>
