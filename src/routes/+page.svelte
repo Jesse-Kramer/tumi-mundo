@@ -41,8 +41,10 @@
         {#if data.profiles && data.profiles.length > 0}
             <ul>
                 {#each data.profiles as profile}
-                    <li>{profile._of_child}</li>
+                    <li>{profile.name_of_child}</li>
+                    <li>{profile.gender}</li>
                     <li>{profile.date_of_birth}</li>
+                    <li>{profile.current_language}</li>
                     <li>{profile.new_language_to_learn}</li>
                     <li>{profile.buddy}</li>
                 {/each}
@@ -75,9 +77,9 @@
     </article>
     <h2>Playlists</h2>
     <article>
-        {#if data.personal_playlists && data.personal_playlists.length > 0}
+        {#if data.playlists && data.playlists.length > 0}
             <ul>
-                {#each data.personal_playlists as playlist}
+                {#each data.playlists as playlist}
                     <li>{playlist.title}</li>
                     <li>{playlist.description}</li>
                     <li>{playlist.stories}</li>
