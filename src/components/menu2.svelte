@@ -60,7 +60,7 @@
 
 <style>
     header {
-        height: 4em;
+        height: 5em;
         width: 100%;
         position: absolute;
         bottom: 0;
