@@ -1,8 +1,12 @@
 <script>
     import Menu from '../../components/menu.svelte';
+    import Menu2 from '../../components/menu2.svelte';
+
+    let currentPage = "Home";
 </script>
 
 <section>
+    <Menu2 {currentPage}/>
     <article>
         <img src="/progress.svg" alt="Progress bar">
         <div class="progress-text">
@@ -14,7 +18,6 @@
     <article>
         <img src="/characters/rat.svg" alt="Rat character"/>
     </article>
-    <Menu/>
 </section>
 
 <style>
