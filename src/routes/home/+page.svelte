@@ -2,7 +2,7 @@
     import Menu from '../../components/menu.svelte';
     import Menu2 from '../../components/menu2.svelte';
 
-    let currentPage = "Home";
+    let currentPage = "home";
 </script>
 
 <section>
