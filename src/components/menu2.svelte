@@ -100,7 +100,7 @@
 
     .active a svg{
         background-color: #030303;
-        padding: 4px;
+        padding: .25em;
         border-radius: 12px;
     }
 
