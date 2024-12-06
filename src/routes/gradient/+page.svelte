@@ -47,6 +47,18 @@
         thunder.className = 'thunder';
         sky.appendChild(thunder);
 
+        // Array of audio files
+        var audioFiles = ['../thunder.mp3', '../thunder2.mp3'];
+
+        // Randomly select one audio file
+        var randomAudioFile = audioFiles[Math.floor(Math.random() * audioFiles.length)];
+
+        // Create a new audio object with the randomly selected file
+        var audio = new Audio(randomAudioFile);
+
+        // Play the selected audio
+        audio.play();
+
         // Remove thunder after animation ends
         thunder.addEventListener('animationend', () => {
             thunder.remove();
