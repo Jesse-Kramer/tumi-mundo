@@ -1,10 +1,10 @@
 <script>
     let AnimationProgress = false;
-
+  
     function handleAnimation() {
-        AnimationProgress = true;
+      AnimationProgress = true;
     }
-
+  
     import { onMount } from 'svelte';
 
     onMount(() => {
@@ -14,6 +14,9 @@
         const starCount = Math.floor(Math.random() * 10) + 20; // Between 20 and 30
         for (let i = 0; i < starCount; i++) {
             const star = document.createElement('span');
+
+            // Assign a class to the star
+            star.className = 'star'; // This will add the 'star' class to the element
 
             // Inline styles for each star
             star.style.position = 'absolute';
@@ -28,14 +31,13 @@
             star.style.bottom = `${Math.random() * 35}%`; // Random top within 30% of the height
             star.style.left = `${Math.random() * 100}%`; // Random left across 100% of the width
 
-            // Optional: Twinkle effect using animation
-            star.style.animation = 'twinkle 3s infinite ease-in-out';
+            star.style.animationDelay = (Math.random() * 4 + 0.5) + 's';
 
+            // Append the star to the sky
             sky.appendChild(star);
         }
     });
 </script>
-
 <main>
     <section>
         <ul>
@@ -54,7 +56,7 @@
                 </svg>                
             </li>
             <li>
-                <svg width="390" height="210" viewBox="0 0 390 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class:is-after={AnimationProgress} on:animationend={handleAnimation} width="390" height="210" viewBox="0 0 390 210" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_d_1_132)">
                     <path d="M174.659 112.85C174.659 144.106 90.7998 169.444 274.241 169.444C352.859 169.444 373.824 144.106 373.824 112.85C373.824 81.5932 329.239 56.2549 274.241 56.2549C219.243 56.2549 174.659 81.5932 174.659 112.85Z" fill="#645EB0"/>
                     <path d="M10 120.935C10 147.726 24.6806 169.445 102.977 169.445C176.38 169.445 195.954 147.726 195.954 120.935C195.954 94.1435 154.327 72.4249 102.977 72.4249C51.6273 72.4249 10 94.1435 10 120.935Z" fill="#645EB0"/>
@@ -75,7 +77,7 @@
                 </svg>
             </li>
             <li>
-                <svg width="359" height="239" viewBox="0 0 359 239" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class:is-after={AnimationProgress} on:animationend={handleAnimation} width="359" height="239" viewBox="0 0 359 239" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_d_1_147)">
                     <path d="M202.278 134.056C202.278 169.923 276.5 199 114.139 199C44.5556 199 26 169.923 26 134.056C26 98.1877 65.4611 69.1111 114.139 69.1111C162.817 69.1111 202.278 98.1877 202.278 134.056Z" fill="#645EB0"/>
                     <path d="M322.889 134.056C322.889 169.923 308.972 199 234.75 199C165.167 199 146.611 169.923 146.611 134.056C146.611 98.1877 186.072 69.1111 234.75 69.1111C283.428 69.1111 322.889 98.1877 322.889 134.056Z" fill="#645EB0"/>
@@ -96,7 +98,7 @@
                 </svg>
             </li>
             <li>
-                <svg width="390" height="210" viewBox="0 0 390 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class:is-after={AnimationProgress} on:animationend={handleAnimation} width="390" height="210" viewBox="0 0 390 210" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_d_1_137)">
                     <path d="M183.008 112.85C183.008 144.106 108.138 169.444 271.916 169.444C342.106 169.444 360.824 144.106 360.824 112.85C360.824 81.5932 321.018 56.2549 271.916 56.2549C222.813 56.2549 183.008 81.5932 183.008 112.85Z" fill="#645EB0"/>
                     <path d="M36 120.935C36 147.726 49.1069 169.444 119.01 169.444C184.545 169.444 202.021 147.726 202.021 120.935C202.021 94.1434 164.856 72.4248 119.01 72.4248C73.165 72.4248 36 94.1434 36 120.935Z" fill="#645EB0"/>
@@ -190,7 +192,8 @@
                 </svg>
             </li>
             <li>
-                <div class="sky"></div>
+                <div class="sky">
+                </div>
             </li>
          </ul>
     </section>
@@ -217,7 +220,13 @@ section {
 }
 
 svg.is-after {
-    display: none;
+    opacity: 0%;
+}
+
+:global(.star) {
+  width: 3px;
+  height: 3px;
+  animation: twinkle 3s infinite ease-in-out;
 }
 
 ul li:nth-of-type(1) svg {
@@ -227,23 +236,26 @@ ul li:nth-of-type(1) svg {
 }
 
 ul li:nth-of-type(2) svg {
-    position: absolute;
-    top: 10%;
-    left: 0;
+    position: fixed;
+    top: 35%;
+    left: 5%;
+    transform: translateX(0%);
 }
 
 ul li:nth-of-type(3) svg {
-    position: absolute;
-    top: 13%;
-    right: 20%;
+    position: fixed;
+    top: 25%;
+    right: 25%;
     width: 50%;
+    transform: translateX(0%);
 }
 
 ul li:nth-of-type(4) svg {
-    position: absolute;
-    top: 11%;
+    position: fixed;
+    top: 30%;
     right: 0;
     width: 50%;
+    transform: translateX(0%);
 }
 
 ul li:nth-of-type(5) svg {
@@ -285,45 +297,45 @@ ul li:nth-of-type(4) svg path {
 @supports (animation-timeline: auto) {
     @media (prefers-reduced-motion: no-preference) {
         ul li:nth-of-type(1) svg {
-            animation: sunrise ease-out;
+            animation: disapear ease-out;
             animation-timeline: scroll(root);
             animation-range: 0 45%; 
         }
 
         ul li:nth-of-type(2) svg{
-            animation: slide-in-right linear forwards;
-            animation-timeline: view();
-            animation-range: cover -10%;
+            animation: slide-in-right ease-out;
+            animation-timeline: scroll(root);
+            animation-range: 0 60%; 
         }
 
         ul li:nth-of-type(3) svg {
-            animation: slide-in-left linear forwards;
-            animation-timeline: view();
-            animation-range: cover;
+            animation: slide-in-left ease-out;
+            animation-timeline: scroll(root);
+            animation-range: 0 60%; 
         }
 
         ul li:nth-of-type(4) svg{
-            animation: slide-in-right linear forwards;
-            animation-timeline: view();
-            animation-range: contain;
+            animation: slide-in-right ease-out;
+            animation-timeline: scroll(root);
+            animation-range: 0 60%; 
         }
 
         ul li:nth-of-type(6) svg{
-            animation: slide-in-right linear forwards;
-            animation-timeline: view();
-            animation-range: entry;
+            animation: slide-in-right ease-in reverse;
+            animation-timeline: scroll(root);
+            animation-range: 50% 100%; 
         }
 
         ul li:nth-of-type(7) svg {
-            animation: slide-in-left linear forwards;
-            animation-timeline: view();
-            animation-range: entry;
+            animation: slide-in-left ease-in reverse;
+            animation-timeline: scroll(root);
+            animation-range: 50% 100%; 
         }
 
         ul li:nth-of-type(8) svg{
-            animation: slide-in-right linear forwards;
-            animation-timeline: view();
-            animation-range: entry;
+            animation: slide-in-right ease-in reverse;
+            animation-timeline: scroll(root);
+            animation-range: 50% 100%; 
         }
     }
 }
@@ -351,35 +363,59 @@ ul li:nth-of-type(4) svg path {
 }
 
 @keyframes slide-in-left {
-    from {
-        transform: translateX(-100%);
+    0% {
+        opacity: 100%;
+        transform: translateX(0%);
     }
-    to {
-        transform: translateX(0);
+
+    60% {
+        transform: translateX(-50%);
+        opacity: 100%;
+    }
+    100% {
+        transform: translateX(-200%);
+
     }
 }
 
 @keyframes slide-in-right {
-    from {
-        transform: translateX(100%);
+    0% {
+        opacity: 100%;
+        transform: translateX(0%);
     }
-    to {
-        transform: translateX(0);
+
+    60% {
+        opacity: 100%;
+        transform: translateX(50%);
+    }
+
+    100% {
+        transform: translateX(200%);
     }
 }
 
-@keyframes sunrise {
-    25%{
-      opacity: 85%;
+@keyframes disapear {
+    0% {
+        opacity: 100%;
     }
     50%{
-      opacity: 90%;
+      opacity: 75%;
     }
     75%{
-      opacity: 95%;
+      opacity: 50%;
     }
     100% {
-      opacity: 100%;
+      opacity: 0%;
     }
-  }
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 50%;
+    }
+
+    50% {
+        opacity: 100%;
+    }
+}
 </style>
