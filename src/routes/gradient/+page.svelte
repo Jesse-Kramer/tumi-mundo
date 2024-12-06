@@ -36,7 +36,22 @@
             // Append the star to the sky
             sky.appendChild(star);
         }
+        setInterval(() => {
+            triggerThunder();
+        }, Math.random() * 5000 + 8000); // Random time between 10s and 15s
     });
+
+    function triggerThunder() {
+        const sky = document.querySelector('.sky');
+        const thunder = document.createElement('div');
+        thunder.className = 'thunder';
+        sky.appendChild(thunder);
+
+        // Remove thunder after animation ends
+        thunder.addEventListener('animationend', () => {
+            thunder.remove();
+        });
+    }
 </script>
 <main>
     <section>
@@ -227,6 +242,37 @@ svg.is-after {
   width: 3px;
   height: 3px;
   animation: twinkle 3s infinite ease-in-out;
+}
+
+:global(.thunder) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 37%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.7) 100%);
+    animation: thunder-strike 0.2s ease-in-out;
+}
+
+@keyframes thunder-strike {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 1;
+    }
+    
+    100% {
+        opacity: 0;
+    }
 }
 
 ul li:nth-of-type(1) svg {
