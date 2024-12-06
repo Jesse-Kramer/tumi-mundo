@@ -223,6 +223,7 @@ main {
     background: linear-gradient(0deg, rgba(20,33,81,1) 0%, rgba(71,24,113,1) 33%, rgba(255,153,0,1) 47%, rgba(255,226,192,1) 62%, rgba(147,196,214,1) 70%, rgba(26,162,239,1) 82%, rgba(193,202,253,1) 100%);
     background-blend-mode: screen;
     position: relative;
+    overflow: hidden;
 }
 
 .sky {
@@ -269,7 +270,7 @@ svg.is-after {
     75% {
         opacity: 1;
     }
-    
+
     100% {
         opacity: 0;
     }
