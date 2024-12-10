@@ -27,7 +27,6 @@ import Input from '../../components/forms/input.svelte';
                         <img src="/icons/menu-close.svg" height="16px" width="15px" alt="close button">
                         <label for="login-popup" class="popup-close-btn">Close</label>
                     </div>
-                    
                 </div>
                 <div class="popup-content">
                     <form action="/profile-selection">

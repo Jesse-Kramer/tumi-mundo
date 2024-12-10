@@ -7,20 +7,25 @@
 
 <li class="story-container">
     <div class="story-image flex-items">
-        <img src="{story.image}" alt="">
+        <!-- <img src="{story.image}" alt="" height="60px" width="64px"> -->
+        <picture>
+          <source srcset="{story.image}?width=64&format=webp" type="image/webp">
+          <source srcset="{story.image}?width=64" type="image/jpeg">
+          <img src="{story.image}" alt="{story.title} cover image" height="60" width="64" loading="lazy">
+      </picture>
     </div>
-    <h3 class="story-title">{story.title}</h3>
+    <h2 class="story-title">{story.title}</h2>
     <div class="story-language flex-items">
-        <img src="/languages/{story.language}.svg" alt="{story.language} flag">
-    </div>
+        <img src="/languages/{story.language}.svg" alt="{story.language} flag" height="17.59" width="17.58">
+    </div> 
     <p class="story-summary">{story.summary}</p>
     <div class="story-playtime flex-items">
-        <a href={firstAudio} target="_blank"><img src="/icons/story-playtime.svg" alt="Icon for playtime"></a>
+        <a href={firstAudio} target="_blank"><img src="/icons/story-playtime.svg" alt="Icon for playtime" height="17.59" width="17.59"></a>
         <p>{story.playtime}</p>
     </div>
     <div class="story-icons flex-items">
-        <img src="/icons/download-icon.svg" alt="Icon for download">
-        <img src="/icons/add-to-playlist.svg" alt="Icon for adding to playlist">
+        <img src="/icons/download-icon.svg" alt="Icon for download" height="17.59" width="17.59">
+        <img src="/icons/add-to-playlist.svg" alt="Icon for adding to playlist" height="12" width="12">
     </div>
 </li>
 
@@ -30,7 +35,7 @@
       max-height: 5.3em;
       display: grid;
       grid-template-columns: repeat(6, auto);
-      grid-template-rows: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
       background-color: #fff;
       overflow: hidden;
       padding: 10px;
