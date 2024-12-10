@@ -25,8 +25,8 @@ input[type="submit"], button{
     border-radius: 7px;
     border: none;
     font-size: 18px;
-    color: #797979;
-    background-color: #C0C0C0 ;
+    color: #4f4f4f;
+    background-color: #d4d4d4 ;
     position: fixed;
     bottom: 0;
     margin-bottom: 40px;
