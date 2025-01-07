@@ -29,18 +29,18 @@
     {/if}
     </article>
 
-    <h2>Buddys</h2>
+    <h2>buddies</h2>
     <article>
-        {#if data.buddys && data.buddys.length > 0}
+        {#if data.buddies && data.buddies.length > 0}
             <ul>
-                {#each data.buddys as buddy}
+                {#each data.buddies as buddy}
                     <li>{buddy.name}</li>
                     <li>{buddy.animal}</li>
                 {/each}
             </ul>
     {:else}
         <!-- This will show if no people are available -->
-        <p>Er zijn geen buddys</p>
+        <p>Er zijn geen buddies</p>
     {/if}
     </article>
 

@@ -19,7 +19,7 @@
         <li>
             <select name="animal" id="animal-select" aria-label="Choose an animal">
                 <option value="animal">Animal</option>
-                    {#each data.buddys as buddy}
+                    {#each data.buddies as buddy}
                         <option value="{ buddy.animal }">{ buddy.animal }</option>
                     {/each}
         </li>

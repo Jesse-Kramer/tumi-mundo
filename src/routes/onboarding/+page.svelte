@@ -50,17 +50,17 @@
               <li>
                   <section>
                     <a href="/sign-up">Skip</a>
-                    <div class="mouse">
+                    <div class="Mouse">
                         <picture class="eclipse">
                             <source srcset="/characters/Ellipse131.svg?format=avif" type="image/avif">
                             <source srcset="/characters/Ellipse131.svg?format=webp">
                             <img src="h/characters/Ellipse131.svg" alt="eclipse" loading="lazy" width="250">
                         </picture>
-                        <picture class="rat">
-                            <source srcset="/characters/mouse.svg?format=avif" type="image/avif">
-                            <source srcset="/characters/mouse.svg?format=webp">
+                        <picture class="Rat">
+                            <source srcset="/characters/Mouse.svg?format=avif" type="image/avif">
+                            <source srcset="/characters/Mouse.svg?format=webp">
                             <!-- svelte-ignore a11y-img-redundant-alt -->
-                            <img src="/characters/mouse.svg" alt="rat image" height="250">
+                            <img src="/characters/Mouse.svg" alt="Rat image" height="250">
                         </picture>
                     </div>
 
@@ -83,17 +83,17 @@
               <li>
                   <section class="slide-2">
                     <a href="/sign-up">Skip</a>
-                      <div class="mouse">
+                      <div class="Mouse">
                           <picture class="eclipse">
                               <source srcset="/characters/Ellipse131-2.svg?format=avif" type="image/avif">
                               <source srcset="/characters/Ellipse131-2.svg?format=webp">
                               <img src="/characters/Ellipse131-2.svg" alt="eclipse" loading="lazy" width="250">
                           </picture>
-                          <picture class="rat">
-                              <source srcset="/characters/mouse.svg?format=avif" type="image/avif">
-                              <source srcset="/characters/mouse.svg?format=webp">
+                          <picture class="Rat">
+                              <source srcset="/characters/Mouse.svg?format=avif" type="image/avif">
+                              <source srcset="/characters/Mouse.svg?format=webp">
                               <!-- svelte-ignore a11y-img-redundant-alt -->
-                              <img src="/characters/mouse.svg" alt="rat image" height="250">
+                              <img src="/characters/Mouse.svg" alt="Rat image" height="250">
                           </picture>
                       </div>
 
@@ -116,17 +116,17 @@
               <li>
                   <section class="slide-3">
                     <a href="/sign-up">Skip</a>
-                    <div class="mouse">
+                    <div class="Mouse">
                         <picture class="eclipse">
                             <source srcset="/characters/Ellipse131-3.svg?format=avif" type="image/avif">
                             <source srcset="/characters/Ellipse131-3.svg?format=webp">
                             <img src="h/characters/Ellipse131-3.svg" alt="eclipse" loading="lazy" width="250">
                         </picture>
-                        <picture class="rat">
-                            <source srcset="/characters/mouse.svg?format=avif" type="image/avif">
-                            <source srcset="/characters/mouse.svg?format=webp">
+                        <picture class="Rat">
+                            <source srcset="/characters/Mouse.svg?format=avif" type="image/avif">
+                            <source srcset="/characters/Mouse.svg?format=webp">
                             <!-- svelte-ignore a11y-img-redundant-alt -->
-                            <img src="/characters/mouse.svg" alt="rat image" height="250">
+                            <img src="/characters/Mouse.svg" alt="Rat image" height="250">
                         </picture>
                     </div>
 
@@ -196,7 +196,7 @@ section:nth-of-type(1) {
 .slide-3{
   background-color: #069E8F;
 }
-.mouse {
+.Mouse {
     width: 100%;
     height: 400px;
     display: flex;
@@ -207,7 +207,7 @@ section:nth-of-type(1) {
 picture {
     position: relative; 
 }
-.rat {
+.Rat {
     position: absolute;
     top: 0; 
     left: 0; 
