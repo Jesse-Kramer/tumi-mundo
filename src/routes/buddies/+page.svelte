@@ -4,9 +4,6 @@
 </script>
 
 <main>
-  <section>
-
-  </section>
   <section class="carousel">
     <ul>
       {#each data.buddies as buddy}
@@ -19,21 +16,25 @@
     </ul>
   </section>
   <section>
-
+    <button>Kiezen</button>
   </section>
 </main>
 
 <style>
   main {
+    background: linear-gradient(to bottom, #3A9ECA, #2B627A);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    height: 100vh;
     height: 100dvh; /* for dynamic viewport height */
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color: white;
+    margin: auto;
   }
 
   .carousel {
-    max-width: 430px;
+    display: flex;
+    align-items: center;
   }
 
   .carousel ul {
@@ -47,6 +48,7 @@
 
   .carousel ul li {
     max-height: 25em;
+    width: 100vw;
     padding: 1em;
     text-align: center;
     scroll-snap-align: center;
@@ -54,6 +56,6 @@
 
   .carousel ul li img { 
     height:18.5em;
-    width:auto;
+    width:90vw;
   }
 </style>
