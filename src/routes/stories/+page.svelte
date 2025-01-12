@@ -5,24 +5,23 @@
     export let data;
 </script>
 
-<section>
+<main>
     <h2>Stories</h2>
-    <ul>
+    <section class="story-list">
         {#each data.stories as story}
-            <Story {story} />
+        <Story {story} />
         {/each}
-    </ul>
-</section>
+    </section>
+</main>
 
 <style>
-    section {
+    main {
         background-color: purple;
         padding: 20px;
         color: white;
     }
 
-    ul {
-        list-style: none;
+    section.story-list {
         padding: 0;
         display: flex;
         flex-wrap: wrap;
