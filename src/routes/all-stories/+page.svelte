@@ -46,12 +46,10 @@
     </ul>
 </header>
 
-<section>
-    <ul>
-        {#each data.stories as story}
-            <Story {story} />
-        {/each}
-    </ul>
+<section class="story-list">
+    {#each data.stories as story}
+        <Story {story} />
+    {/each}
 </section>
 
 <style>
@@ -154,6 +152,15 @@ ul {
 h2 {
     font-size: 24px;
     margin-bottom: 16px;
+}
+
+/* Styling for stories. */
+section.story-list {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
 }
 
 @media only screen and (min-width: 865px) {
