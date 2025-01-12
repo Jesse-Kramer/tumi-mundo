@@ -17,7 +17,7 @@
         </div>
     </article>
     <article>
-        <img src="/characters/rat.svg" alt="Rat character"/>
+        <img src="/characters/Rat.svg" alt="Rat character"/>
     </article>
     <!-- <Menu/> -->
 </section>
@@ -56,7 +56,7 @@ article {
 }
 
 article:first-of-type img {
-    max-width: 290px;
+    width: 30vh;
 }
 
 .progress-text {
