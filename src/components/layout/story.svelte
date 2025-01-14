@@ -3,25 +3,28 @@
 
     // SELECT THE FIRST AUDIO FILE, EX: NO SPEAKER PROFILE SELECTED
     const firstAudio = story.audios?.[0]?.file || null;
+
+    const {image, title, language, summary, playtime} = story
+
 </script>
 
 <li class="story-container">
     <div class="story-image flex-items">
         <!-- <img src="{story.image}" alt="" height="60px" width="64px"> -->
         <picture>
-          <source srcset="{story.image}?width=64&format=webp" type="image/webp">
-          <source srcset="{story.image}?width=64" type="image/jpeg">
-          <img src="{story.image}" alt="{story.title} cover image" height="60" width="64" loading="lazy">
+          <source srcset="{image}?width=64&format=webp" type="image/webp">
+          <source srcset="{image}?width=64" type="image/jpeg">
+          <img src="{image}" alt="{title} cover image" height="60" width="64" loading="lazy">
       </picture>
     </div>
-    <h2 class="story-title">{story.title}</h2>
+    <h2 class="story-title">{title}</h2>
     <div class="story-language flex-items">
-        <img src="/languages/{story.language}.svg" alt="{story.language} flag" height="17.59" width="17.58">
+        <img src="/languages/{language}.svg" alt="{language} flag" height="17.59" width="17.58">
     </div> 
-    <p class="story-summary">{story.summary}</p>
+    <p class="story-summary">{summary}</p>
     <div class="story-playtime flex-items">
         <a href={firstAudio} target="_blank"><img src="/icons/story-playtime.svg" alt="Icon for playtime" height="17.59" width="17.59"></a>
-        <p>{story.playtime}</p>
+        <p>{playtime}</p>
     </div>
     <div class="story-icons flex-items">
         <img src="/icons/download-icon.svg" alt="Icon for download" height="17.59" width="17.59">
