@@ -1,5 +1,5 @@
 <script>
-
+console.log(userId, profileId);
 import Input from '../../components/forms/input.svelte';
 
 </script>
